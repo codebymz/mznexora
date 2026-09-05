@@ -107,8 +107,8 @@ export function About() {
               <div className="divider-glow mt-7" />
 
               <p className="mt-7 font-display text-[1.0625rem] leading-snug tracking-[-0.015em] text-ice/90">
-                "I build things I would use myself. That is the only standard I
-                work to."
+                &ldquo;I build things I would use myself. That is the only standard I
+                work to.&rdquo;
               </p>
               <p className="mt-3 text-xs text-mist">
                 Muhammad Zain · Founder, MZ Nexora
