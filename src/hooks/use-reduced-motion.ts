@@ -1,0 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+/**
+ * Tracks `prefers-reduced-motion`. Returns false during SSR and the first
+ * paint, so animated components must degrade gracefully rather than pop.
+ */
+export function useReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(query.matches);
+
+    const onChange = (event: MediaQueryListEvent) => setReduced(event.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  return reduced;
+}
