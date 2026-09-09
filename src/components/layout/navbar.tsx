@@ -183,7 +183,7 @@ export function Navbar() {
             />
 
             <motion.div
-              className="absolute inset-x-4 top-24 overflow-hidden rounded-glass glass-raised glass-rim p-6 pb-7 sm:inset-x-6"
+              className="absolute inset-x-4 top-20 max-h-[calc(100vh-5.5rem)] overflow-y-auto rounded-glass glass-raised glass-rim p-6 pb-7 sm:inset-x-6"
               initial={{ y: -18, opacity: 0, scale: 0.98 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -12, opacity: 0, scale: 0.985 }}

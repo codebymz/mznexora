@@ -87,21 +87,21 @@ export function Hero() {
             and more.
           </motion.p>
 
-          <motion.div {...cue(0.72)} className="mt-10 flex flex-wrap items-center gap-3">
-            <Magnetic cap={9}>
+          <motion.div {...cue(0.72)} className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3">
+            <Magnetic cap={9} className="w-full sm:w-auto">
               <Button
                 variant="primary"
                 size="lg"
                 onClick={() => scrollTo("#contact")}
-                className="group/cta"
+                className="group/cta w-full sm:w-auto"
               >
                 Start a project
                 <ArrowUpRight className="transition-transform duration-400 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
               </Button>
             </Magnetic>
 
-            <Magnetic cap={7}>
-              <Button variant="glass" size="lg" onClick={() => scrollTo("#work")}>
+            <Magnetic cap={7} className="w-full sm:w-auto">
+              <Button variant="glass" size="lg" onClick={() => scrollTo("#work")} className="w-full sm:w-auto">
                 <Play />
                 See the work
               </Button>
