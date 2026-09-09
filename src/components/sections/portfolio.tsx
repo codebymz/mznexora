@@ -96,7 +96,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
         {/* Outcome block: one number large, two supporting. */}
         <div
           className={cn(
-            "relative mt-8 flex flex-wrap items-end gap-x-10 gap-y-5",
+            "relative mt-6 sm:mt-8 flex flex-wrap items-end gap-x-6 sm:gap-x-10 gap-y-4 sm:gap-y-5",
             featured && "sm:gap-x-14",
           )}
         >
@@ -105,12 +105,12 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
               data-numeric
               className={cn(
                 "font-display font-semibold tracking-[-0.04em] text-ice",
-                featured ? "text-[2.75rem] sm:text-[3.5rem]" : "text-[2.25rem]",
+                featured ? "text-[2.125rem] sm:text-[3.5rem]" : "text-[1.85rem] sm:text-[2.25rem]",
               )}
             >
               {study.headline.value}
             </p>
-            <p className="mt-0.5 text-[0.8125rem] text-mist">
+            <p className="mt-0.5 text-xs sm:text-[0.8125rem] text-mist">
               {study.headline.label}
             </p>
           </div>

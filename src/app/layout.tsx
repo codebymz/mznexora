@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 
 import "@/app/globals.css";
+import { CursorGlow } from "@/components/fx/cursor-glow";
+import { CustomCursor } from "@/components/fx/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { IntroProvider } from "@/components/providers/intro";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
@@ -71,6 +73,8 @@ export default function RootLayout({
       <body className="bg-abyss text-ice antialiased selection:bg-electric/60 selection:text-ice">
         <IntroProvider>
           <SmoothScrollProvider>
+            <CustomCursor />
+            <CursorGlow />
             <Navbar />
             <main id="main-content">{children}</main>
             <Footer />

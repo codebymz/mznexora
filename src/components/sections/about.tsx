@@ -84,19 +84,19 @@ export function About() {
             delay={0.1}
             className="lg:col-span-5"
           >
-            <GlassCard className="p-7 sm:p-8" glowColor="rgba(20,184,166,.14)">
+            <GlassCard className="p-5 sm:p-8" glowColor="rgba(20,184,166,.14)">
               <p className="eyebrow">At a glance</p>
 
-              <dl className="mt-6">
+              <dl className="mt-5 sm:mt-6">
                 {FACTS.map((fact) => (
                   <div
                     key={fact.label}
-                    className="flex items-baseline justify-between gap-6 border-b border-ice/[0.07] py-3.5 last:border-0 last:pb-0"
+                    className="flex items-baseline justify-between gap-4 sm:gap-6 border-b border-ice/[0.07] py-2.5 sm:py-3.5 last:border-0 last:pb-0"
                   >
-                    <dt className="text-[0.8125rem] text-mist">{fact.label}</dt>
+                    <dt className="text-xs sm:text-[0.8125rem] text-mist">{fact.label}</dt>
                     <dd
                       data-numeric
-                      className="text-right font-mono text-[0.8125rem] text-ice"
+                      className="text-right font-mono text-xs sm:text-[0.8125rem] text-ice truncate max-w-[55%]"
                     >
                       {fact.value}
                     </dd>

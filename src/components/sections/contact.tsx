@@ -213,7 +213,7 @@ export function Contact() {
           <Reveal delay={0.1}>
             <GlassCard
               tier="raised"
-              className="p-6 sm:p-8 lg:p-10"
+              className="p-4 sm:p-8 lg:p-10"
               sheen={false}
               glowColor="rgba(20,184,166,.14)"
             >
@@ -231,15 +231,15 @@ export function Contact() {
                   </p>
                   <Button
                     variant="glass"
-                    className="mt-8"
+                    className="mt-8 w-full sm:w-auto"
                     onClick={() => setStatus("idle")}
                   >
                     Send another brief
                   </Button>
                 </div>
               ) : (
-                <form noValidate onSubmit={onSubmit} className="grid gap-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
+                <form noValidate onSubmit={onSubmit} className="grid gap-4 sm:gap-5">
+                  <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                     <div>
                       <Label htmlFor="name">Your name</Label>
                       <Input
@@ -299,7 +299,7 @@ export function Contact() {
                     </span>
                   </div>
 
-                  <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                     <div>
                       <Label htmlFor="service">Closest service</Label>
                       <Select
@@ -391,13 +391,14 @@ export function Contact() {
                     />
                   </div>
 
-                  <div className="mt-2 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                    <Magnetic>
+                  <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <Magnetic className="w-full sm:w-auto">
                       <Button
                         type="submit"
                         variant="primary"
                         size="lg"
                         disabled={sending}
+                        className="w-full sm:w-auto"
                       >
                         {sending ? "Sending…" : "Send the brief"}
                         {sending ? null : <ArrowUpRight />}

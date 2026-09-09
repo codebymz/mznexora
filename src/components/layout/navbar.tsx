@@ -70,16 +70,16 @@ export function Navbar() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-[100] flex justify-center px-4 pt-4 sm:px-6 sm:pt-5"
+        className="fixed inset-x-0 top-0 z-[100] flex justify-center px-3 pt-3 sm:px-6 sm:pt-5"
       >
         <nav
           aria-label="Main"
           className={cn(
-            "relative flex w-full max-w-6xl items-center justify-between gap-4 overflow-hidden rounded-pill glass glass-rim",
+            "relative flex w-full max-w-6xl items-center justify-between gap-2 sm:gap-4 rounded-pill glass glass-rim",
             "transition-[padding,background-color,border-color,box-shadow,backdrop-filter] duration-600 ease-glass",
             condensed
-              ? "px-3 py-2 sm:px-4 sm:py-2 [--blur-glass:34px]"
-              : "px-3 py-2.5 sm:px-5 sm:py-3.5",
+              ? "px-3 py-1.5 sm:px-4 sm:py-2 [--blur-glass:34px]"
+              : "px-3.5 py-2 sm:px-5 sm:py-3.5",
           )}
         >
           <a
@@ -88,7 +88,7 @@ export function Navbar() {
               event.preventDefault();
               go("#hero");
             }}
-            className="shrink-0 rounded-pill pl-1 pr-2"
+            className="shrink-0 rounded-pill py-0.5 pl-0.5 pr-1.5"
             aria-label={`${site.name} — home`}
           >
             <Wordmark />
@@ -145,20 +145,20 @@ export function Navbar() {
             <Button
               variant="glass"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden size-9 sm:size-11"
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
             >
-              {menuOpen ? <X /> : <Menu />}
+              {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
             </Button>
           </div>
 
           {/* Reading progress, drawn on the pill's lower rim. */}
           <motion.span
             aria-hidden
-            className="absolute inset-x-0 bottom-0 h-px origin-left bg-linear-to-r from-electric via-aqua to-electric"
+            className="absolute inset-x-0 bottom-0 h-px origin-left bg-linear-to-r from-electric via-aqua to-electric rounded-full"
             style={{ scaleX: scrollYProgress }}
           />
         </nav>

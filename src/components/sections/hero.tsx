@@ -48,7 +48,7 @@ export function Hero() {
         aria-hidden
         className={cn(
           "pointer-events-none absolute inset-0 -z-10",
-          "opacity-45 sm:opacity-60 lg:opacity-100",
+          "opacity-20 sm:opacity-50 lg:opacity-100",
           "lg:left-auto lg:right-[-8%] lg:w-[62%]",
         )}
       >
@@ -62,13 +62,13 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="shell relative grid flex-1 items-center gap-16 lg:grid-cols-12">
+      <div className="shell relative grid flex-1 items-center gap-12 sm:gap-16 lg:grid-cols-12">
         <div className="lg:col-span-7 xl:col-span-6">
           <motion.div {...cue(0.05)}>
             <Badge tone="live">Open to freelance projects</Badge>
           </motion.div>
 
-          <h1 className="mt-7 text-display text-ice">
+          <h1 className="mt-5 sm:mt-7 text-display text-ice">
             <MaskedLines
               play={introDone}
               delay={0.18}
@@ -81,13 +81,13 @@ export function Hero() {
             />
           </h1>
 
-          <motion.p {...cue(0.6)} className="mt-8 max-w-xl text-lead text-dim">
+          <motion.p {...cue(0.6)} className="mt-6 sm:mt-8 max-w-xl text-lead text-dim">
             I build AI automations, web tools, and n8n workflows — solo,
             end-to-end, and shipped for real. Speed Lab, Zapr, PaperGenAI,
             and more.
           </motion.p>
 
-          <motion.div {...cue(0.72)} className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3">
+          <motion.div {...cue(0.72)} className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-3">
             <Magnetic cap={9} className="w-full sm:w-auto">
               <Button
                 variant="primary"
@@ -108,13 +108,13 @@ export function Hero() {
             </Magnetic>
           </motion.div>
 
-          <motion.div {...cue(0.86)} className="mt-14">
+          <motion.div {...cue(0.86)} className="mt-10 sm:mt-14">
             <p className="eyebrow">Projects I&apos;ve built</p>
-            <ul className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <ul className="mt-3.5 flex flex-wrap items-center gap-2 sm:gap-2.5">
               {PROJECTS.map((project) => (
                 <li
                   key={project}
-                  className="font-display text-sm font-medium text-ice/45 transition-colors duration-500 hover:text-ice/80"
+                  className="rounded-pill border border-ice/10 bg-ice/[0.04] px-3 py-1 font-display text-xs font-medium text-ice/85 transition-all duration-300 hover:border-aqua/40 hover:bg-aqua/10 hover:text-ice"
                 >
                   {project}
                 </li>
@@ -176,18 +176,18 @@ export function Hero() {
       </div>
 
       {/* Metrics rail — the hero's own footer, and the page's first glass slab. */}
-      <motion.div {...cue(1.1)} className="shell relative mt-16">
-        <div className="overflow-hidden rounded-glass glass glass-rim">
-          <dl className="grid grid-cols-2 divide-ice/[0.07] md:grid-cols-4 md:divide-x">
+      <motion.div {...cue(1.1)} className="shell relative mt-10 sm:mt-16">
+        <div className="overflow-hidden rounded-glass glass glass-rim bg-abyss/85 backdrop-blur-2xl">
+          <dl className="grid grid-cols-2 divide-x divide-y divide-ice/[0.08] sm:divide-y-0 md:grid-cols-4 md:divide-x">
             {metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="border-b border-ice/[0.07] px-6 py-6 md:border-b-0 lg:px-8"
+                className="px-4 py-4 sm:px-6 sm:py-6 lg:px-8 border-b sm:border-b-0 border-ice/[0.07]"
               >
-                <dd className="font-display text-[1.75rem] font-semibold tracking-[-0.03em] text-ice lg:text-[2rem]">
+                <dd className="font-display text-[1.5rem] sm:text-[1.75rem] font-semibold tracking-[-0.03em] text-ice lg:text-[2rem]">
                   <CountUp value={metric.value} suffix={metric.suffix} />
                 </dd>
-                <dt className="mt-1.5 text-[0.8125rem] text-mist">{metric.label}</dt>
+                <dt className="mt-1 text-xs sm:text-[0.8125rem] text-mist">{metric.label}</dt>
               </div>
             ))}
           </dl>

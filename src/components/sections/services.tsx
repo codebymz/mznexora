@@ -147,14 +147,14 @@ export function Services() {
           ))}
         </div>
 
-        <Reveal delay={0.1} className="mt-16">
-          <div className="relative overflow-hidden rounded-glass glass-raised glass-rim px-7 py-8 sm:px-10 sm:py-9">
+        <Reveal delay={0.1} className="mt-12 sm:mt-16">
+          <div className="relative overflow-hidden rounded-glass glass-raised glass-rim px-5 py-6 sm:px-10 sm:py-9">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl">
                 <h3 className="text-h3 text-ice sm:text-[1.375rem]">
                   Not sure which of these you need?
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-sm leading-relaxed text-mist">
                   Send us the process that is costing you the most time. We will
                   tell you whether it is worth automating — and say so plainly
                   when it is not.
@@ -164,7 +164,7 @@ export function Services() {
               <Button
                 variant="primary"
                 size="lg"
-                className="shrink-0"
+                className="shrink-0 w-full sm:w-auto"
                 onClick={() => scrollTo("#contact")}
               >
                 Book a diagnosis

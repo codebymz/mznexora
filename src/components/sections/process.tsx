@@ -70,12 +70,12 @@ export function Process() {
           {/* Rail: a dim track with a lit beam that fills as you read. */}
           <span
             aria-hidden
-            className="absolute left-[1.4375rem] top-2 bottom-2 w-px bg-ice/[0.09] sm:left-[1.6875rem]"
+            className="absolute left-[1.1875rem] top-2 bottom-2 w-px bg-ice/[0.09] sm:left-[1.6875rem]"
           />
           <span
             ref={beam}
             aria-hidden
-            className="absolute left-[1.4375rem] top-2 bottom-2 w-px origin-top bg-linear-to-b from-electric via-aqua to-aqua/0 sm:left-[1.6875rem]"
+            className="absolute left-[1.1875rem] top-2 bottom-2 w-px origin-top bg-linear-to-b from-electric via-aqua to-aqua/0 sm:left-[1.6875rem]"
             style={{ transform: "scaleY(0)" }}
           />
 
@@ -83,12 +83,12 @@ export function Process() {
             <li
               key={step.id}
               data-step
-              className="process-step relative grid grid-cols-[3rem_1fr] gap-x-5 pb-12 last:pb-0 sm:grid-cols-[3.5rem_1fr] sm:gap-x-8 lg:grid-cols-[3.5rem_1fr_16rem]"
+              className="process-step relative grid grid-cols-[2.5rem_1fr] gap-x-3.5 pb-9 last:pb-0 sm:grid-cols-[3.5rem_1fr] sm:gap-x-8 sm:pb-12 lg:grid-cols-[3.5rem_1fr_16rem]"
             >
               <div className="relative">
-                <span className="process-node grid size-12 place-items-center rounded-2xl border border-ice/[0.1] bg-ice/[0.03] font-mono text-[0.8125rem] text-mist sm:size-14">
+                <span className="process-node grid size-10 place-items-center rounded-xl sm:rounded-2xl border border-ice/[0.1] bg-ice/[0.03] font-mono text-xs text-mist sm:size-14 sm:text-[0.8125rem]">
                   {index === processSteps.length - 1 ? (
-                    <Check className="size-5" strokeWidth={1.8} />
+                    <Check className="size-4 sm:size-5" strokeWidth={1.8} />
                   ) : (
                     String(index + 1).padStart(2, "0")
                   )}

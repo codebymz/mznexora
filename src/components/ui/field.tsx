@@ -4,7 +4,7 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import { cn } from "@/lib/utils";
 
 const fieldBase = [
-  "w-full rounded-2xl px-4 text-sm text-ice",
+  "w-full rounded-2xl px-4 text-base sm:text-sm text-ice",
   "glass border-ice/10 placeholder:text-mist/60",
   "transition-[border-color,box-shadow,background-color] duration-300 ease-glass",
   "hover:border-ice/18",

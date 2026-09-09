@@ -58,9 +58,9 @@ export function SocialDock() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
       aria-label="Quick social links"
-      className="fixed right-3.5 bottom-6 z-[90] flex flex-col gap-2.5 sm:right-6 sm:bottom-8"
+      className="fixed right-3 bottom-4 z-[90] flex flex-col gap-2 sm:right-6 sm:bottom-8"
     >
-      <div className="flex flex-col gap-2.5 rounded-full glass glass-rim p-2 backdrop-blur-xl shadow-2xl">
+      <div className="flex flex-col gap-2 rounded-full glass glass-rim p-1.5 sm:p-2 backdrop-blur-xl shadow-2xl">
         {links.map((item) => {
           const Icon = item.icon;
           return (
