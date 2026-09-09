@@ -113,7 +113,7 @@ export function Contact() {
   const sending = status === "sending";
 
   return (
-    <section id="contact" className="section-y relative">
+    <section id="contact" className="section-y relative overflow-hidden">
       <SectionGlow className="right-0 top-1/3 size-[36rem]" tone="aqua" />
 
       <div className="shell relative grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -378,8 +378,21 @@ export function Contact() {
                     </span>
                   </div>
 
-                  {/* Honeypot. Off-screen rather than display:none so bots see it. */}
-                  <div aria-hidden className="absolute left-[-9999px] top-0">
+                  {/* Honeypot. Hidden visually but accessible to bots. */}
+                  <div
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      width: 1,
+                      height: 1,
+                      padding: 0,
+                      margin: -1,
+                      overflow: "hidden",
+                      clip: "rect(0,0,0,0)",
+                      whiteSpace: "nowrap",
+                      border: 0,
+                    }}
+                  >
                     <label htmlFor="trap">Website</label>
                     <input
                       id="trap"

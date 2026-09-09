@@ -162,7 +162,7 @@ export function Portfolio() {
   const [featured, ...rest] = caseStudies;
 
   return (
-    <section id="work" className="section-y relative">
+    <section id="work" className="section-y relative overflow-hidden">
       <SectionGlow className="-left-24 bottom-1/4 size-[36rem]" tone="aqua" />
 
       <div className="shell relative">

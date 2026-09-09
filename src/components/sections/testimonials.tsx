@@ -35,7 +35,7 @@ export function Testimonials() {
   const [lead, ...rest] = testimonials;
 
   return (
-    <section id="voices" className="section-y relative">
+    <section id="voices" className="section-y relative overflow-hidden">
       <SectionGlow className="left-1/3 top-1/3 size-[38rem]" tone="aqua" />
 
       <div className="shell relative">

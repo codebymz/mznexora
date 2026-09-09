@@ -10,7 +10,7 @@ export function AuroraBackground({ className }: { className?: string }) {
     <div
       aria-hidden
       className={cn(
-        "pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-abyss",
+        "pointer-events-none fixed inset-0 -z-10 overflow-clip bg-abyss",
         className,
       )}
     >

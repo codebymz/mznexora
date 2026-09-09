@@ -81,7 +81,7 @@ export function Services() {
   const { scrollTo } = useSmoothScroll();
 
   return (
-    <section id="services" className="section-y relative">
+    <section id="services" className="section-y relative overflow-hidden">
       <SectionGlow className="-right-32 top-1/3 size-[38rem]" tone="aqua" />
 
       <div className="shell relative">

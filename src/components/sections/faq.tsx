@@ -21,7 +21,7 @@ export function Faq() {
   const first = faqs[0];
 
   return (
-    <section id="faq" className="section-y relative">
+    <section id="faq" className="section-y relative overflow-hidden">
       <SectionGlow className="-left-32 top-1/4 size-[32rem]" />
 
       <div className="shell relative grid gap-12 lg:grid-cols-12 lg:gap-16">

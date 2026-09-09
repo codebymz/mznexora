@@ -23,7 +23,7 @@ export function Footer() {
       {/* One last wash of brand light, then silence. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[46rem] -translate-x-1/2 rounded-full bg-electric/12 blur-[120px]"
+        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[min(46rem,100vw)] -translate-x-1/2 rounded-full bg-electric/12 blur-[120px]"
       />
 
       <div className="shell relative pt-20 pb-10 lg:pt-24">

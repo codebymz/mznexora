@@ -7,7 +7,7 @@ import { advantages } from "@/lib/data/advantages";
 
 export function Advantage() {
   return (
-    <section id="advantage" className="section-y relative">
+    <section id="advantage" className="section-y relative overflow-hidden">
       <SectionGlow className="-right-40 top-1/4 size-[34rem]" />
 
       <div className="shell relative">

@@ -29,7 +29,7 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between",
+        "flex flex-wrap gap-8 lg:flex-nowrap lg:flex-row lg:items-end lg:justify-between",
         centered && "lg:flex-col lg:items-center",
         className,
       )}

@@ -24,7 +24,7 @@ export function About() {
   const { scrollTo } = useSmoothScroll();
 
   return (
-    <section id="about" className="section-y relative">
+    <section id="about" className="section-y relative overflow-hidden">
       <SectionGlow className="-left-40 top-20 size-[34rem]" />
 
       <div className="shell relative">

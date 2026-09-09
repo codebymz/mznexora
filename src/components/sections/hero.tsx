@@ -49,7 +49,8 @@ export function Hero() {
         className={cn(
           "pointer-events-none absolute inset-0 -z-10",
           "opacity-20 sm:opacity-50 lg:opacity-100",
-          "lg:left-auto lg:right-[-8%] lg:w-[62%]",
+          "overflow-hidden",
+          "lg:left-auto lg:right-[-8%] lg:w-[62%] lg:overflow-visible",
         )}
       >
         <motion.div
@@ -62,7 +63,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="shell relative grid flex-1 items-center gap-12 sm:gap-16 lg:grid-cols-12">
+      <div className="shell relative flex flex-col flex-1 justify-center gap-12 sm:gap-16 lg:grid lg:grid-cols-12">
         <div className="lg:col-span-7 xl:col-span-6">
           <motion.div {...cue(0.05)}>
             <Badge tone="live">Open to freelance projects</Badge>

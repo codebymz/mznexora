@@ -56,7 +56,7 @@ export function Process() {
   }, [reducedMotion]);
 
   return (
-    <section id="process" className="section-y relative">
+    <section id="process" className="section-y relative overflow-hidden">
       <SectionGlow className="left-1/4 top-10 size-[30rem]" />
 
       <div className="shell relative">
