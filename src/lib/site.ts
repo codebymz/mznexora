@@ -6,15 +6,15 @@
 export const site = {
   name: "MZ Nexora",
   legalName: "MZ Nexora",
-  tagline: "Creating the Future with AI",
+  tagline: "AI Studio, Autonomous Agents & n8n Automations",
   description:
-    "MZ Nexora is a one-person AI & automation studio. I build AI automations, autonomous agents, web tools and n8n workflows that help businesses save time and grow faster.",
+    "MZ Nexora is a premier AI & automation studio founded by Muhammad Zain. We build autonomous AI agents, custom n8n workflows, web tools, and Next.js applications that automate business operations and drive exponential growth.",
   logo: {
     path: "/assets/logos/logo.jpg",
     icon: "/assets/logos/logo.jpg",
-    alt: "MZ Nexora Logo",
+    alt: "MZ Nexora AI Studio Logo",
   },
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mznexora.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mznexora.vercel.app",
   locale: "en_US",
   founded: 2024,
   email: "mznexora@gmail.com",

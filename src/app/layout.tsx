@@ -29,35 +29,91 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} — AI Studio, Autonomous Agents & n8n Automations`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  metadataBase: new URL(site.url),
+  keywords: [
+    "MZ Nexora",
+    "AI Studio",
+    "AI Agency",
+    "Autonomous AI Agents",
+    "n8n Workflow Automation",
+    "AI Automation Agency",
+    "Next.js AI Developer",
+    "Custom AI Chatbots",
+    "AI Engineer Pakistan",
+    "SaaS Development Studio",
+    "Python AI Engineer",
+    "PaperGenAI",
+    "Speed Lab",
+    "Zapr File Converter",
+    "API Integration Specialist",
+    "Muhammad Zain",
+    "Freelance AI Developer",
+    "Workflow Automation Agency",
+  ],
+  authors: [{ name: "Muhammad Zain", url: site.url }],
+  creator: "Muhammad Zain",
+  publisher: site.name,
+  category: "Technology & Artificial Intelligence",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: site.url,
+  },
   icons: {
     icon: site.logo.path,
     shortcut: site.logo.path,
     apple: site.logo.path,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} — AI Studio, Autonomous Agents & n8n Automations`,
     description: site.description,
     url: site.url,
     siteName: site.name,
     locale: site.locale,
     type: "website",
+    images: [
+      {
+        url: `${site.url}/assets/logos/logo.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — AI Studio & Autonomous Agents`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} — AI Studio & Autonomous Agents`,
     description: site.description,
+    images: [`${site.url}/assets/logos/logo.jpg`],
+    creator: "@mznexora",
   },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0b1120",
   colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -65,11 +121,56 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: site.name,
+    image: `${site.url}/assets/logos/logo.jpg`,
+    "@id": site.url,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "PK",
+    },
+    sameAs: [
+      site.whatsapp,
+      site.linkedin,
+      site.github,
+      "https://facebook.com/mznexora",
+      "https://instagram.com/mznexora",
+      "https://x.com/mznexora",
+    ],
+    founder: {
+      "@type": "Person",
+      name: "Muhammad Zain",
+      jobTitle: "Founder & Lead AI Engineer",
+    },
+    description: site.description,
+    knowsAbout: [
+      "Artificial Intelligence",
+      "Autonomous Agents",
+      "n8n Workflow Automation",
+      "Next.js Development",
+      "Python AI Development",
+      "API Integrations",
+      "SaaS Architecture",
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-abyss text-ice antialiased selection:bg-electric/60 selection:text-ice">
         <IntroProvider>
           <SmoothScrollProvider>
