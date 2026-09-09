@@ -9,6 +9,11 @@ export const site = {
   tagline: "Creating the Future with AI",
   description:
     "MZ Nexora is a one-person AI & automation studio. I build AI automations, autonomous agents, web tools and n8n workflows that help businesses save time and grow faster.",
+  logo: {
+    path: "/assets/logos/logo.jpg",
+    icon: "/assets/logos/logo.jpg",
+    alt: "MZ Nexora Logo",
+  },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mznexora.com",
   locale: "en_US",
   founded: 2024,
@@ -58,7 +63,7 @@ export const socials = [
 
 /** Headline proof points — real projects shipped. */
 export const metrics = [
-  { value: 5, suffix: "+", label: "Products built" },
+  { value: 7, suffix: "+", label: "Products built" },
   { value: 3, suffix: "+", label: "n8n automations" },
   { value: 100, suffix: "%", label: "Solo-built & owned" },
   { value: 2024, suffix: "", label: "Started" },

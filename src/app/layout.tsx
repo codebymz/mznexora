@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   },
   description: site.description,
   metadataBase: new URL(site.url),
+  icons: {
+    icon: site.logo.path,
+    shortcut: site.logo.path,
+    apple: site.logo.path,
+  },
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,

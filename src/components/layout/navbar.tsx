@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 import { Wordmark } from "@/components/brand/wordmark";
@@ -13,6 +14,8 @@ import { navLinks, sectionIds, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const { scrollTo, stop, start } = useSmoothScroll();
   const active = useActiveSection(sectionIds);
   const [condensed, setCondensed] = useState(false);
@@ -27,10 +30,14 @@ export function Navbar() {
   const go = useCallback(
     (href: string) => {
       setMenuOpen(false);
+      if (pathname !== "/") {
+        router.push("/" + (href.startsWith("#") ? href : ""));
+        return;
+      }
       // Let the menu begin closing before the scroll starts.
       window.setTimeout(() => scrollTo(href), menuOpen ? 260 : 0);
     },
-    [scrollTo, menuOpen],
+    [scrollTo, menuOpen, pathname, router],
   );
 
   useEffect(() => {

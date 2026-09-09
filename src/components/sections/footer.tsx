@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUp, Mail, Phone } from "lucide-react";
 
 import { Wordmark } from "@/components/brand/wordmark";
@@ -125,12 +126,12 @@ export function Footer() {
             <ul className="flex items-center gap-6">
               {legal.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mist/80 transition-colors duration-300 hover:text-ice"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

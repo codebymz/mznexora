@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /**
@@ -51,15 +53,28 @@ export function Monogram({ className }: { className?: string }) {
 export function Wordmark({
   className,
   showMark = true,
+  useCustomLogo = true,
 }: {
   className?: string;
   showMark?: boolean;
+  useCustomLogo?: boolean;
 }) {
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
       {showMark ? (
-        <span className="relative grid size-9 shrink-0 place-items-center rounded-xl glass glass-rim">
-          <Monogram className="size-5" />
+        <span className="relative grid size-9 shrink-0 place-items-center rounded-xl glass glass-rim overflow-hidden p-0.5">
+          {useCustomLogo && site.logo?.path ? (
+            <Image
+              src={site.logo.path}
+              alt={site.logo.alt}
+              width={36}
+              height={36}
+              className="size-full object-cover rounded-lg"
+              priority
+            />
+          ) : (
+            <Monogram className="size-5" />
+          )}
         </span>
       ) : null}
       <span className="font-display text-[0.98rem] font-semibold tracking-[-0.01em] text-ice">
@@ -68,3 +83,4 @@ export function Wordmark({
     </span>
   );
 }
+

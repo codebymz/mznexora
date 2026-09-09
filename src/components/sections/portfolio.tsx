@@ -32,11 +32,33 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
           )}
         />
 
-        <div className="relative flex items-center gap-3 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-mist">
-          <span className="text-ice/70">{study.client}</span>
-          <span className="h-px w-4 bg-ice/20" />
-          <span>{study.sector}</span>
-          <span className="ml-auto">{study.year}</span>
+        <div className="relative flex flex-wrap items-center justify-between gap-2 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-mist">
+          <div className="flex items-center gap-2.5">
+            <span className="text-ice/70">{study.client}</span>
+            <span className="h-px w-3 bg-ice/20" />
+            <span>{study.sector}</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            {study.status && (
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-medium tracking-wider",
+                  study.status === "Live" &&
+                    "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+                  study.status === "Coming Soon" &&
+                    "border border-amber-500/30 bg-amber-500/10 text-amber-300",
+                  study.status === "Private Project" &&
+                    "border border-indigo-500/30 bg-indigo-500/10 text-indigo-300"
+                )}
+              >
+                {study.status === "Live" && (
+                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                )}
+                {study.status}
+              </span>
+            )}
+            <span>{study.year}</span>
+          </div>
         </div>
 
         <h3
@@ -44,10 +66,22 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
             "relative mt-6 text-h3 text-ice",
             featured
               ? "sm:text-[1.875rem] sm:leading-[1.15] sm:tracking-[-0.028em]"
-              : "sm:text-[1.375rem] sm:tracking-[-0.02em]",
+              : "sm:text-[1.375rem] sm:tracking-[-0.02em]"
           )}
         >
-          {study.title}
+          {study.link ? (
+            <a
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 transition-colors hover:text-aqua"
+            >
+              <span>{study.title}</span>
+              <ArrowUpRight className="size-5 shrink-0 opacity-70 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover/link:opacity-100" />
+            </a>
+          ) : (
+            study.title
+          )}
         </h3>
 
         <p
@@ -94,16 +128,30 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
           ))}
         </div>
 
-        <ul className="relative mt-8 flex flex-wrap gap-1.5 border-t border-ice/[0.07] pt-6">
-          {study.services.map((service) => (
-            <li
-              key={service}
-              className="rounded-pill border border-ice/[0.08] bg-ice/[0.03] px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.1em] text-mist"
+        <div className="relative mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ice/[0.07] pt-6">
+          <ul className="flex flex-wrap gap-1.5">
+            {study.services.map((service) => (
+              <li
+                key={service}
+                className="rounded-pill border border-ice/[0.08] bg-ice/[0.03] px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.1em] text-mist"
+              >
+                {service}
+              </li>
+            ))}
+          </ul>
+
+          {study.link && (
+            <a
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-aqua/30 bg-aqua/10 px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-wider text-aqua transition-all hover:border-aqua/60 hover:bg-aqua/20 shadow-xs"
             >
-              {service}
-            </li>
-          ))}
-        </ul>
+              Visit Project
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          )}
+        </div>
       </GlassCard>
     </TiltCard>
   );
@@ -137,7 +185,7 @@ export function Portfolio() {
             </Reveal>
           ) : null}
 
-          <Stagger className="contents" gap={0.08}>
+          <Stagger className="lg:col-span-2 grid gap-4 lg:grid-cols-2" gap={0.08}>
             {rest.map((study) => (
               <StaggerItem key={study.id} className="h-full">
                 <CaseCard study={study} featured={false} />
