@@ -54,11 +54,11 @@ export function SocialDock() {
 
   return (
     <motion.aside
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.8 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
       aria-label="Quick social links"
-      className="fixed right-3 bottom-4 z-[90] flex flex-col gap-2 sm:right-6 sm:bottom-8"
+      className="fixed right-3 bottom-5 z-[90] flex flex-col gap-2 sm:right-6 sm:bottom-8 max-w-[calc(100vw-1.5rem)]"
     >
       <div className="flex flex-col gap-2 rounded-full glass glass-rim p-1.5 sm:p-2 backdrop-blur-xl shadow-2xl">
         {links.map((item) => {
@@ -71,9 +71,9 @@ export function SocialDock() {
               rel="noopener noreferrer"
               aria-label={item.name}
               title={item.name}
-              className={`group relative grid size-10 place-items-center rounded-full border border-ice/10 bg-abyss/60 text-mist transition-all duration-300 ${item.color} ${item.glow}`}
+              className={`group relative grid size-9 sm:size-10 place-items-center rounded-full border border-ice/10 bg-abyss/80 text-mist transition-all duration-300 ${item.color} ${item.glow}`}
             >
-              <Icon className="size-4.5 transition-transform duration-300 group-hover:scale-110" />
+              <Icon className="size-4 sm:size-4.5 transition-transform duration-300 group-hover:scale-110" />
 
               {/* Tooltip on desktop */}
               <span className="pointer-events-none absolute right-12 hidden rounded-lg border border-ice/10 bg-obsidian/90 px-2.5 py-1 text-xs font-medium text-ice opacity-0 shadow-lg backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100 sm:block whitespace-nowrap">

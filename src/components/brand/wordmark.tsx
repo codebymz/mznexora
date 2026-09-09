@@ -77,7 +77,7 @@ export function Wordmark({
           )}
         </span>
       ) : null}
-      <span className="font-display text-[0.98rem] font-semibold tracking-[-0.01em] text-ice">
+      <span className="font-display text-[0.88rem] sm:text-[0.98rem] font-semibold tracking-[-0.01em] text-ice whitespace-nowrap">
         MZ&nbsp;Nexora
       </span>
     </span>
