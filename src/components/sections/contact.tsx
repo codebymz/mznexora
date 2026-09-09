@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Check, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Check, Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 
 import { SectionGlow } from "@/components/fx/aurora-background";
@@ -132,6 +132,12 @@ export function Contact() {
                   label: "Email",
                   value: site.email,
                   href: `mailto:${site.email}`,
+                },
+                {
+                  icon: MessageCircle,
+                  label: "WhatsApp",
+                  value: site.phone + " (Click to chat)",
+                  href: site.whatsapp,
                 },
                 {
                   icon: Phone,
@@ -307,9 +313,9 @@ export function Contact() {
                           errors.service ? "service-error" : undefined
                         }
                       >
-                        <option value="">Select one</option>
+                        <option value="">Select a service...</option>
                         {servicesByPractice.map((practice) => (
-                          <optgroup key={practice.id} label={practice.name}>
+                          <optgroup key={practice.id} label={`✦ ${practice.name}`}>
                             {practice.items.map((service) => (
                               <option key={service.id} value={service.title}>
                                 {service.title}
@@ -317,7 +323,7 @@ export function Contact() {
                             ))}
                           </optgroup>
                         ))}
-                        <option value="Not sure yet">Not sure yet</option>
+                        <option value="Not sure yet">Not sure yet (General Inquiry)</option>
                       </Select>
                       <span id="service-error">
                         <FieldError>{errors.service}</FieldError>

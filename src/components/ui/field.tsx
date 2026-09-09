@@ -48,7 +48,7 @@ export const Select = forwardRef<
         className={cn(
           fieldBase,
           "h-12 cursor-pointer appearance-none pr-11",
-          "[&>option]:bg-obsidian [&>option]:text-ice",
+          "[&_option]:bg-[#111827] [&_option]:text-ice [&_option]:py-1.5 [&_optgroup]:bg-[#0b1120] [&_optgroup]:text-aqua [&_optgroup]:font-semibold [&_optgroup]:not-italic",
           className,
         )}
         {...props}

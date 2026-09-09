@@ -8,6 +8,7 @@ import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Technologies } from "@/components/sections/technologies";
 import { Testimonials } from "@/components/sections/testimonials";
+import { SocialDock } from "@/components/ui/social-dock";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Testimonials />
       <Faq />
       <Contact />
+      <SocialDock />
     </>
   );
 }

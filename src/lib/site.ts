@@ -21,6 +21,10 @@ export const site = {
   salesEmail: "mznexora@gmail.com",
   phone: "+92 326 9656457",
   phoneHref: "+923269656457",
+  whatsapp: "https://wa.me/923269656457",
+  whatsappHref: "https://wa.me/923269656457",
+  github: "https://github.com/codebymz",
+  linkedin: "https://linkedin.com/in/mznexora",
   address: {
     street: "Pakistan",
     city: "Pakistan",
@@ -55,9 +59,11 @@ export const sectionIds = [
 ] as const;
 
 export const socials = [
+  { label: "WhatsApp", href: "https://wa.me/923269656457" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/mznexora" },
+  { label: "GitHub", href: "https://github.com/codebymz" },
   { label: "Facebook", href: "https://facebook.com/mznexora" },
   { label: "Instagram", href: "https://instagram.com/mznexora" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/mznexora" },
   { label: "X / Twitter", href: "https://x.com/mznexora" },
 ] as const;
 
