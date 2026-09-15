@@ -78,8 +78,8 @@ export function Navbar() {
             "relative flex w-full max-w-6xl items-center justify-between gap-2 sm:gap-4 rounded-pill glass glass-rim",
             "transition-[padding,background-color,border-color,box-shadow,backdrop-filter] duration-600 ease-glass",
             condensed
-              ? "px-3 py-1.5 sm:px-4 sm:py-2 [--blur-glass:34px]"
-              : "px-3.5 py-2 sm:px-5 sm:py-3.5",
+              ? "px-3 py-1.5 sm:px-4 sm:py-2 bg-abyss/60 [--blur-glass:12px]"
+              : "px-3.5 py-2 sm:px-5 sm:py-3.5 bg-abyss/35 [--blur-glass:8px]",
           )}
         >
           <a
@@ -128,55 +128,8 @@ export function Navbar() {
             })}
           </ul>
 
-          {/* Social icons & CTA on the right (matching reference image) */}
+          {/* CTA on the right */}
           <div className="flex shrink-0 items-center gap-3">
-            <div className="hidden items-center gap-2.5 sm:flex">
-              <a
-                href={site.github}
-                target="_blank"
-                rel="noreferrer"
-                className="size-8 rounded-full flex items-center justify-center text-mist hover:text-ice hover:bg-ice/10 transition-colors"
-                aria-label="GitHub"
-              >
-                <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-              </a>
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="size-8 rounded-full flex items-center justify-center text-mist hover:text-ice hover:bg-ice/10 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.46 1.46 0 1 0 0-2.92 1.46 1.46 0 0 0 0 2.92m1.37 9.74v-8.37H5.09v8.37h2.74z" />
-                </svg>
-              </a>
-              <a
-                href={site.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="size-8 rounded-full flex items-center justify-center text-mist hover:text-ice hover:bg-ice/10 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.33C9.35 7.33 9.06 7.4 8.81 7.67C8.56 7.94 7.86 8.59 7.86 9.93C7.86 11.27 8.84 12.56 8.97 12.74C9.11 12.92 10.9 15.68 13.64 16.86C14.29 17.14 14.8 17.31 15.19 17.44C15.84 17.65 16.44 17.62 16.91 17.55C17.43 17.47 18.52 16.89 18.75 16.24C18.98 15.6 18.98 15.05 18.91 14.93C18.84 14.82 18.66 14.75 18.39 14.61C18.11 14.47 16.78 13.82 16.53 13.73C16.28 13.64 16.1 13.59 15.91 13.87C15.73 14.15 15.22 14.75 15.06 14.93C14.91 15.12 14.75 15.14 14.48 15C14.2 14.87 13.33 14.58 12.29 13.66C11.48 12.94 10.94 12.05 10.78 11.78C10.63 11.5 10.76 11.36 10.9 11.22C11.03 11.09 11.18 10.89 11.32 10.73C11.46 10.57 11.51 10.45 11.6 10.27C11.69 10.09 11.65 9.93 11.58 9.79C11.51 9.65 10.96 8.31 10.73 7.76C10.51 7.23 10.29 7.3 10.13 7.3C9.97 7.3 9.79 7.33 9.53 7.33Z" />
-                </svg>
-              </a>
-              <a
-                href={site.pinterest}
-                target="_blank"
-                rel="noreferrer"
-                className="size-8 rounded-full flex items-center justify-center text-mist hover:text-ice hover:bg-ice/10 transition-colors"
-                aria-label="Pinterest"
-              >
-                <svg className="size-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.357-.053.225-.175.271-.403.165-1.503-.699-2.443-2.894-2.443-4.656 0-3.791 2.754-7.275 7.944-7.275 4.17 0 7.411 2.972 7.411 6.943 0 4.143-2.612 7.478-6.238 7.478-1.218 0-2.364-.633-2.756-1.382l-.749 2.854c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12.004-5.373 12.004-11.999C24.018 5.367 18.644 0 12.017 0z" />
-                </svg>
-              </a>
-            </div>
-
             <Magnetic className="hidden sm:inline-flex" cap={6} strength={0.18}>
               <Button
                 variant="primary"
