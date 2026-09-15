@@ -118,7 +118,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-6 border-t border-ice/[0.07] pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mist/80">
+          <p className="font-mono text-xs uppercase tracking-wider text-mist">
             © {year} {site.legalName} · Pakistan
           </p>
 
@@ -128,7 +128,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mist/80 transition-colors duration-300 hover:text-ice"
+                    className="font-mono text-xs uppercase tracking-wider text-mist transition-colors duration-300 hover:text-ice"
                   >
                     {item.label}
                   </Link>
@@ -139,7 +139,7 @@ export function Footer() {
             <button
               type="button"
               onClick={() => scrollTo("#hero")}
-              className="group inline-flex items-center gap-2 rounded-pill glass glass-rim px-3.5 py-2 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-mist transition-colors duration-400 hover:text-ice"
+              className="group inline-flex items-center gap-2 rounded-pill glass glass-rim px-3.5 py-2 font-mono text-xs uppercase tracking-wider text-mist transition-colors duration-400 hover:text-ice"
             >
               Top
               <ArrowUp className="size-3 transition-transform duration-400 group-hover:-translate-y-0.5" />

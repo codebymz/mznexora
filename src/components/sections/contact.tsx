@@ -164,7 +164,7 @@ export function Contact() {
                       <Icon className="size-4" strokeWidth={1.6} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-mono text-[0.625rem] uppercase tracking-[0.18em] text-mist">
+                      <span className="block font-mono text-xs uppercase tracking-wider text-mist">
                         {item.label}
                       </span>
                       {item.href ? (
@@ -188,16 +188,16 @@ export function Contact() {
 
           <Reveal delay={0.3} className="mt-10">
             <div className="rounded-glass glass glass-rim p-6">
-              <p className="eyebrow text-[0.625rem]">What happens next</p>
+              <p className="eyebrow text-xs">What happens next</p>
               <ol className="mt-4 space-y-3">
                 {NEXT_STEPS.map((step, index) => (
                   <li
                     key={step}
-                    className="flex gap-3.5 text-[0.8125rem] leading-relaxed text-mist"
+                    className="flex gap-3.5 text-xs sm:text-sm leading-relaxed text-mist"
                   >
                     <span
                       data-numeric
-                      className="mt-px font-mono text-[0.6875rem] text-aqua/80"
+                      className="mt-px font-mono text-xs text-aqua"
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -407,24 +407,24 @@ export function Contact() {
                     />
                   </div>
 
-                  <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="mt-4 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="max-w-xs text-xs leading-relaxed text-mist">
+                      No sequences, no newsletter. We reply, and that is the
+                      whole of it.
+                    </p>
+
                     <Magnetic className="w-full sm:w-auto">
                       <Button
                         type="submit"
                         variant="primary"
                         size="lg"
                         disabled={sending}
-                        className="w-full sm:w-auto"
+                        className="w-full sm:w-auto sm:min-w-[13rem]"
                       >
                         {sending ? "Sending…" : "Send the brief"}
                         {sending ? null : <ArrowUpRight />}
                       </Button>
                     </Magnetic>
-
-                    <p className="max-w-xs text-xs leading-relaxed text-mist">
-                      No sequences, no newsletter. We reply, and that is the
-                      whole of it.
-                    </p>
                   </div>
 
                   {status === "failed" && notice ? (

@@ -48,22 +48,22 @@ export function Technologies() {
       </div>
 
       <div className="shell relative mt-14 lg:mt-16">
-        <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
+        <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
           {techGroups.map((group) => (
             <StaggerItem key={group.id} className="h-full">
-              <div className="h-full rounded-glass glass glass-rim p-6">
+              <div className="h-full rounded-glass glass glass-rim p-6 sm:p-7 lg:p-8">
                 <div className="flex items-baseline justify-between">
                   <p className="eyebrow">{group.label}</p>
-                  <span data-numeric className="font-mono text-[0.625rem] text-mist/70">
+                  <span data-numeric className="font-mono text-xs text-mist/70">
                     {group.items.length}
                   </span>
                 </div>
 
-                <ul className="mt-5 flex flex-wrap gap-1.5">
+                <ul className="mt-6 flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-pill border border-ice/[0.08] bg-ice/[0.035] px-3 py-1.5 text-[0.8125rem] text-ice/80 transition-colors duration-400 hover:border-aqua/30 hover:text-ice"
+                      className="rounded-pill border border-ice/10 bg-ice/[0.04] px-3.5 py-1.5 text-xs text-ice/85 transition-colors duration-400 hover:border-aqua/30 hover:text-ice"
                     >
                       {item}
                     </li>

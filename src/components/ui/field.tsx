@@ -79,7 +79,7 @@ export function Label({
   return (
     <LabelPrimitive.Root
       className={cn(
-        "flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-mist",
+        "flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-mist",
         className,
       )}
       {...props}

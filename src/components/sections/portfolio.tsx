@@ -32,7 +32,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
           )}
         />
 
-        <div className="relative flex flex-wrap items-center justify-between gap-2 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-mist">
+        <div className="relative flex flex-wrap items-center justify-between gap-2 font-mono text-xs tracking-wider text-mist">
           <div className="flex items-center gap-2.5">
             <span className="text-ice/70">{study.client}</span>
             <span className="h-px w-3 bg-ice/20" />
@@ -42,7 +42,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
             {study.status && (
               <span
                 className={cn(
-                  "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-medium tracking-wider",
+                  "inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium tracking-wide",
                   study.status === "Live" &&
                     "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
                   study.status === "Coming Soon" &&
@@ -93,10 +93,10 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
           {study.challenge}
         </p>
 
-        {/* Outcome block: one number large, two supporting. */}
+        {/* Outcome block: standardized metric & supporting grid with uniform spacing */}
         <div
           className={cn(
-            "relative mt-6 sm:mt-8 flex flex-wrap items-end gap-x-6 sm:gap-x-10 gap-y-4 sm:gap-y-5",
+            "relative mt-6 sm:mt-8 flex flex-wrap items-end gap-x-6 sm:gap-x-10 gap-y-4 sm:gap-y-5 min-h-[4.25rem]",
             featured && "sm:gap-x-14",
           )}
         >
@@ -104,13 +104,13 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
             <p
               data-numeric
               className={cn(
-                "font-display font-semibold tracking-[-0.04em] text-ice",
-                featured ? "text-[2.125rem] sm:text-[3.5rem]" : "text-[1.85rem] sm:text-[2.25rem]",
+                "font-display font-semibold tracking-[-0.03em] text-ice",
+                featured ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl",
               )}
             >
               {study.headline.value}
             </p>
-            <p className="mt-0.5 text-xs sm:text-[0.8125rem] text-mist">
+            <p className="mt-1 text-xs text-mist">
               {study.headline.label}
             </p>
           </div>
@@ -133,7 +133,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
             {study.services.map((service) => (
               <li
                 key={service}
-                className="rounded-pill border border-ice/[0.08] bg-ice/[0.03] px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.1em] text-mist"
+                className="rounded-pill border border-ice/10 bg-ice/[0.04] px-3 py-1 font-mono text-xs text-mist"
               >
                 {service}
               </li>
@@ -145,7 +145,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
               href={study.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-aqua/30 bg-aqua/10 px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-wider text-aqua transition-all hover:border-aqua/60 hover:bg-aqua/20 shadow-xs"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-pill border border-aqua/30 bg-aqua/10 px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-aqua transition-all hover:border-aqua/60 hover:bg-aqua/20 shadow-xs"
             >
               Visit Project
               <ArrowUpRight className="size-3.5" />
@@ -167,7 +167,7 @@ export function Portfolio() {
 
       <div className="shell relative">
         <SectionHeading
-          eyebrow="What I have built"
+          eyebrow="Case Studies"
           title="Real projects, shipped solo."
           lead="These are the actual products I have designed and built — from AI-powered tools to web apps and automation workflows. No fake clients, no inflated numbers."
           aside={

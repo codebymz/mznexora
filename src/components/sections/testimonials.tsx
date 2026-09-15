@@ -17,7 +17,7 @@ function Attribution({
     <div className={cn("flex items-center gap-3.5", className)}>
       <span
         aria-hidden
-        className="grid size-10 shrink-0 place-items-center rounded-full border border-ice/[0.12] bg-linear-to-br from-ice/[0.14] to-ice/[0.02] font-mono text-[0.6875rem] tracking-[0.06em] text-ice/85"
+        className="grid size-10 shrink-0 place-items-center rounded-full border border-ice/[0.12] bg-linear-to-br from-ice/[0.14] to-ice/[0.02] font-mono text-xs tracking-wider text-ice/85"
       >
         {person.initials}
       </span>
@@ -70,7 +70,7 @@ export function Testimonials() {
                     <span className="size-1.5 rounded-full bg-aqua" />
                     <span
                       data-numeric
-                      className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-ice/90"
+                      className="font-mono text-xs uppercase tracking-wider text-ice"
                     >
                       {lead.metric}
                     </span>
@@ -101,7 +101,7 @@ export function Testimonials() {
                   {person.metric ? (
                     <p
                       data-numeric
-                      className="mt-4 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-aqua/85"
+                      className="mt-4 font-mono text-xs uppercase tracking-wider text-aqua"
                     >
                       {person.metric}
                     </p>

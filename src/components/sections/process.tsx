@@ -100,12 +100,12 @@ export function Process() {
                   <h3 className="text-h3 text-ice sm:text-[1.5rem] sm:tracking-[-0.02em]">
                     {step.title}
                   </h3>
-                  <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-aqua/80">
+                  <span className="font-mono text-xs uppercase tracking-wider text-aqua">
                     {step.duration}
                   </span>
                 </div>
 
-                <p className="mt-3 max-w-2xl text-[0.9375rem] leading-relaxed text-mist">
+                <p className="mt-3 max-w-2xl text-sm sm:text-[0.9375rem] leading-relaxed text-mist">
                   {step.summary}
                 </p>
 
@@ -125,12 +125,12 @@ export function Process() {
               {/* On wide screens the deliverables get their own column, which
                   reads as a contract rather than a bullet list. */}
               <div className="hidden pt-2 lg:block">
-                <p className="eyebrow text-[0.625rem]">You receive</p>
+                <p className="eyebrow text-xs">You receive</p>
                 <ul className="mt-3 space-y-2">
                   {step.outputs.map((output) => (
                     <li
                       key={output}
-                      className="flex items-start gap-2.5 text-[0.8125rem] text-mist"
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-mist"
                     >
                       <span className="mt-[0.4rem] size-1 shrink-0 rounded-full bg-aqua/70" />
                       {output}

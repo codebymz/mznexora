@@ -17,8 +17,10 @@ export const AccordionItem = forwardRef<
       ref={ref}
       className={cn(
         "group/item relative overflow-hidden rounded-2xl glass glass-rim",
-        "transition-[border-color,background-color] duration-500 ease-glass",
-        "data-[state=open]:border-aqua/25 data-[state=open]:bg-ice/[0.055]",
+        "transition-all duration-400 ease-glass",
+        "border-ice/10 bg-ice/[0.02]",
+        "hover:border-ice/20 hover:bg-ice/[0.04]",
+        "data-[state=open]:border-aqua/40 data-[state=open]:bg-aqua/[0.06] data-[state=open]:shadow-[0_0_24px_-8px_rgba(20,184,166,0.25)]",
         className,
       )}
       {...props}
@@ -37,7 +39,8 @@ export const AccordionTrigger = forwardRef<
         className={cn(
           "flex flex-1 items-start justify-between gap-6 px-6 py-5 text-left",
           "font-display text-[1.0625rem] font-medium tracking-[-0.015em] text-ice/90",
-          "transition-colors duration-300 hover:text-ice",
+          "transition-colors duration-300 hover:text-ice group-data-[state=open]/item:text-ice",
+          "focus-visible:outline-2 focus-visible:outline-aqua focus-visible:outline-offset-[-2px] rounded-2xl",
           className,
         )}
         {...props}

@@ -207,7 +207,7 @@ export function Navbar() {
                       className="flex items-baseline justify-between py-4 font-display text-2xl font-medium tracking-[-0.02em] text-ice"
                     >
                       {link.label}
-                      <span className="font-mono text-[0.625rem] text-mist">
+                      <span className="font-mono text-xs text-mist">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </a>

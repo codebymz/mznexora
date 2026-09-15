@@ -27,7 +27,7 @@ export function Advantage() {
               <StaggerItem key={advantage.id}>
                 <div className="group grid grid-cols-1 items-start gap-x-8 gap-y-4 border-t border-ice/[0.08] py-8 transition-colors duration-500 hover:border-ice/20 last:border-b lg:grid-cols-[3rem_1fr_18rem] lg:py-9">
                   <div className="flex items-center gap-4 lg:block">
-                    <span className="font-mono text-[0.6875rem] tracking-[0.2em] text-mist transition-colors duration-500 group-hover:text-aqua">
+                    <span className="font-mono text-xs tracking-wider text-mist transition-colors duration-500 group-hover:text-aqua">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="grid size-9 place-items-center rounded-lg border border-ice/[0.09] bg-ice/[0.03] text-mist transition-colors duration-500 group-hover:border-aqua/30 group-hover:text-ice lg:mt-4">
@@ -45,10 +45,10 @@ export function Advantage() {
                   </div>
 
                   <div className="lg:pt-1.5 lg:text-right">
-                    <p className="eyebrow text-[0.625rem]">Proof</p>
+                    <p className="eyebrow text-xs">Proof</p>
                     <p
                       data-numeric
-                      className="mt-2 font-mono text-[0.8125rem] text-ice"
+                      className="mt-2 font-mono text-xs sm:text-sm text-ice"
                     >
                       {advantage.proof}
                     </p>
@@ -66,7 +66,7 @@ export function Advantage() {
               staff augmentation, unbounded time-and-materials contracts, and
               pilots with no agreed production criteria.
             </p>
-            <p className="shrink-0 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-aqua/80">
+            <p className="shrink-0 font-mono text-xs uppercase tracking-wider text-aqua">
               Stated up front
             </p>
           </div>

@@ -142,7 +142,7 @@ export function Preloader({ onDone }: { onDone: () => void }) {
               <p className="font-display text-sm font-semibold tracking-[0.42em] text-ice/90">
                 MZ NEXORA
               </p>
-              <p className="eyebrow text-[0.625rem]">{site.tagline}</p>
+              <p className="eyebrow text-xs">{site.tagline}</p>
             </div>
 
             <div className="flex w-56 items-center gap-4">
@@ -154,7 +154,7 @@ export function Preloader({ onDone }: { onDone: () => void }) {
               </div>
               <span
                 data-numeric
-                className="w-9 font-mono text-[0.6875rem] text-mist"
+                className="w-9 font-mono text-xs text-mist"
               >
                 {Math.round(progress)}
               </span>

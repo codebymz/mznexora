@@ -20,13 +20,13 @@
   --color-aqua-soft: color-mix(in oklab, #14b8a6 18%, transparent);
 
   /* --- Typography ------------------------------------------------------- */
-  --text-eyebrow: 0.6875rem;
-  --text-eyebrow--line-height: 1;
-  --text-eyebrow--letter-spacing: 0.22em;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.16em;
 
   --text-display: clamp(2.125rem, 6.8vw, 6.25rem);
-  --text-display--line-height: 0.96;
-  --text-display--letter-spacing: -0.035em;
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.025em;
 
   --text-h1: clamp(1.85rem, 4.8vw, 4rem);
   --text-h1--line-height: 1.04;

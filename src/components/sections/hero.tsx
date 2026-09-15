@@ -74,7 +74,7 @@ export function Hero() {
               play={introDone}
               delay={0.18}
               lines={[
-                <>Building the</>,
+                <>Building the{" "}</>,
                 <>
                   <span className="text-brand-gradient">Future</span> with AI
                 </>,
@@ -110,7 +110,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div {...cue(0.86)} className="mt-10 sm:mt-14">
-            <p className="eyebrow">Projects I&apos;ve built</p>
+            <p className="font-mono text-xs font-medium text-mist">Featured Projects</p>
             <ul className="mt-3.5 flex flex-wrap items-center gap-2 sm:gap-2.5">
               {PROJECTS.map((project) => (
                 <li
@@ -133,14 +133,14 @@ export function Hero() {
           <div className="ml-auto w-full max-w-[19rem] animate-float-slow">
             <div className="relative overflow-hidden rounded-2xl glass glass-rim p-5">
               <div className="flex items-center justify-between">
-                <span className="eyebrow text-[0.625rem]">Live agent</span>
+                <span className="font-mono text-xs uppercase tracking-wider text-mist">Live agent</span>
                 <span className="relative flex size-1.5">
                   <span className="absolute inset-0 rounded-full bg-aqua animate-ping" />
                   <span className="relative size-1.5 rounded-full bg-aqua" />
                 </span>
               </div>
 
-              <p className="mt-3 font-mono text-[0.8125rem] text-ice">
+              <p className="mt-3 font-mono text-sm text-ice">
                 mz-nexora-studio
               </p>
 
@@ -168,7 +168,7 @@ export function Hero() {
               style={{ animationDelay: "-3s" }}
             >
               <span className="size-1.5 rounded-full bg-electric" />
-              <span className="font-mono text-[0.6875rem] text-mist">
+              <span className="font-mono text-xs text-mist">
                 Open for new projects
               </span>
             </div>
@@ -188,7 +188,7 @@ export function Hero() {
                 <dd className="font-display text-[1.5rem] sm:text-[1.75rem] font-semibold tracking-[-0.03em] text-ice lg:text-[2rem]">
                   <CountUp value={metric.value} suffix={metric.suffix} />
                 </dd>
-                <dt className="mt-1 text-xs sm:text-[0.8125rem] text-mist">{metric.label}</dt>
+                <dt className="mt-1 text-xs text-mist">{metric.label}</dt>
               </div>
             ))}
           </dl>
@@ -197,11 +197,12 @@ export function Hero() {
         <button
           type="button"
           onClick={() => scrollTo("#about")}
-          className="group mx-auto mt-8 flex items-center gap-3 rounded-pill px-2 py-1 text-mist transition-colors duration-400 hover:text-ice"
+          className="group mx-auto mt-8 flex items-center gap-3 rounded-pill border border-ice/15 bg-ice/[0.04] px-4 py-2 text-xs font-medium text-mist backdrop-blur-md transition-all duration-300 hover:border-aqua/40 hover:bg-aqua/10 hover:text-ice shadow-xs focus-visible:outline-2 focus-visible:outline-aqua"
+          aria-label="Scroll down to About section"
         >
-          <span className="eyebrow">Scroll</span>
-          <span className="relative h-8 w-px overflow-hidden bg-ice/15">
-            <span className="absolute inset-x-0 top-0 h-3 animate-[float_2.4s_ease-in-out_infinite] bg-linear-to-b from-aqua to-transparent" />
+          <span>Scroll</span>
+          <span className="relative h-6 w-px overflow-hidden bg-ice/20">
+            <span className="absolute inset-x-0 top-0 h-2.5 animate-[float_2.4s_ease-in-out_infinite] bg-linear-to-b from-aqua to-transparent" />
           </span>
           <ArrowDown className="size-3.5 transition-transform duration-400 group-hover:translate-y-0.5" />
         </button>

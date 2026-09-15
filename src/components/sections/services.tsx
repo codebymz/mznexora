@@ -66,7 +66,7 @@ function ServiceCard({ service, featured }: { service: Service; featured: boolea
           {service.deliverables.map((item) => (
             <li
               key={item}
-              className="rounded-pill border border-ice/[0.08] bg-ice/[0.03] px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-[0.1em] text-mist"
+              className="rounded-pill border border-ice/10 bg-ice/[0.04] px-3 py-1 font-mono text-xs text-mist"
             >
               {item}
             </li>
@@ -116,7 +116,7 @@ export function Services() {
               <Reveal blur={false} distance={16}>
                 <div className="flex flex-col gap-4 border-b border-ice/[0.08] pb-6 sm:flex-row sm:items-end sm:justify-between">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-[0.6875rem] tracking-[0.2em] text-mist">
+                    <span className="font-mono text-xs tracking-wider text-mist">
                       {String(practiceIndex + 1).padStart(2, "0")}
                     </span>
                     <h3 className="text-h3 text-ice sm:text-[1.5rem] sm:tracking-[-0.02em]">

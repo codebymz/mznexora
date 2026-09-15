@@ -70,7 +70,7 @@ export function SocialDock() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
       aria-label="Quick social links"
-      className="fixed right-3 bottom-5 z-[90] flex flex-col items-center gap-1.5 sm:right-6 sm:bottom-8 sm:gap-2 max-w-[calc(100vw-1.5rem)]"
+      className="fixed right-6 bottom-8 z-40 hidden xl:flex flex-col items-center gap-2"
     >
       <div className="rounded-full glass glass-rim p-1.5 sm:p-2 backdrop-blur-xl shadow-2xl">
         <a
