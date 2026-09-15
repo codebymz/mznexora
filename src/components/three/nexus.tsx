@@ -12,58 +12,34 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
  */
 function StaticNexus() {
   return (
-    <div className="absolute inset-0 grid place-items-center">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <svg
-        viewBox="0 0 400 400"
-        className="size-full max-h-[36rem] max-w-[36rem] opacity-70"
+        viewBox="0 0 1000 400"
+        preserveAspectRatio="none"
+        className="w-full h-full opacity-60"
         aria-hidden
       >
         <defs>
-          <radialGradient id="nexus-node" cx="50%" cy="50%">
-            <stop offset="0%" stopColor="#F8FAFC" stopOpacity="0.95" />
-            <stop offset="45%" stopColor="#2563EB" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#14B8A6" stopOpacity="0" />
-          </radialGradient>
-          <linearGradient id="nexus-edge" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#14B8A6" stopOpacity="0.35" />
+          <linearGradient id="wave-grad-static" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#d946ef" stopOpacity="0.8" />
+            <stop offset="45%" stopColor="#2563eb" stopOpacity="0.75" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.85" />
           </linearGradient>
         </defs>
-
-        {[
-          [96, 118, 188, 92],
-          [188, 92, 268, 148],
-          [268, 148, 232, 246],
-          [232, 246, 132, 268],
-          [132, 268, 96, 118],
-          [188, 92, 232, 246],
-          [96, 118, 232, 246],
-          [268, 148, 132, 268],
-          [188, 92, 132, 268],
-        ].map(([x1, y1, x2, y2], index) => (
-          <line
-            key={index}
-            x1={x1}
-            y1={y1}
-            x2={x2}
-            y2={y2}
-            stroke="url(#nexus-edge)"
-            strokeWidth="1"
-          />
-        ))}
-
-        {[
-          [96, 118, 7],
-          [188, 92, 10],
-          [268, 148, 6],
-          [232, 246, 8],
-          [132, 268, 6],
-        ].map(([cx, cy, r], index) => (
-          <g key={index}>
-            <circle cx={cx} cy={cy} r={Number(r) * 4} fill="url(#nexus-node)" opacity="0.5" />
-            <circle cx={cx} cy={cy} r={r} fill="#0B1120" stroke="#14B8A6" strokeWidth="1.2" />
-          </g>
-        ))}
+        {Array.from({ length: 18 }).map((_, i) => {
+          const yOffset = 180 + i * 11;
+          const amp = 35 + i * 2;
+          return (
+            <path
+              key={i}
+              d={`M0,${yOffset} Q250,${yOffset - amp} 500,${yOffset + amp * 0.5} T1000,${yOffset - amp * 0.8}`}
+              fill="none"
+              stroke="url(#wave-grad-static)"
+              strokeWidth="1.2"
+              opacity={0.3 + (i / 18) * 0.6}
+            />
+          );
+        })}
       </svg>
     </div>
   );

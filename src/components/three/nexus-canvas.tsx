@@ -3,13 +3,13 @@
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 
+import { CyberWaves } from "@/components/three/cyber-waves";
 import { DustField } from "@/components/three/dust-field";
-import { NexusGraph } from "@/components/three/nexus-graph";
 import { useIsTouch } from "@/hooks/use-media-query";
 
 /**
- * Renders the graph and pauses the render loop whenever it leaves the viewport,
- * so scrolling past the hero costs nothing.
+ * Renders the 3D Cyber Wave Mesh & particles, pausing the render loop
+ * whenever it leaves the viewport to save CPU/GPU cycles.
  */
 export function NexusCanvas() {
   const host = useRef<HTMLDivElement>(null);
@@ -40,10 +40,8 @@ export function NexusCanvas() {
     <div ref={host} className="absolute inset-0">
       <Canvas
         frameloop={active ? "always" : "never"}
-        // Capping DPR is the single biggest win here; 1.6 is visually
-        // indistinguishable from 3 for additive point sprites.
-        dpr={[1, isTouch ? 1.35 : 1.6]}
-        camera={{ position: [0, 0, 6.6], fov: 42 }}
+        dpr={[1, isTouch ? 1.25 : 1.5]}
+        camera={{ position: [0, 0.4, 5.5], fov: 50 }}
         gl={{
           antialias: true,
           alpha: true,
@@ -54,9 +52,11 @@ export function NexusCanvas() {
         onCreated={({ gl }) => gl.setClearAlpha(0)}
         style={{ pointerEvents: "none" }}
       >
-        <NexusGraph interactive={!isTouch} />
-        <DustField count={isTouch ? 280 : 620} />
+        <ambientLight intensity={0.8} />
+        <CyberWaves interactive={!isTouch} />
+        <DustField count={isTouch ? 200 : 450} />
       </Canvas>
     </div>
   );
 }
+
