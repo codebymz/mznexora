@@ -27,6 +27,15 @@ function WhatsappIcon({ className }: { className?: string }) {
   );
 }
 
+function PortfolioIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <circle cx="12" cy="8" r="3.25" />
+      <path d="M5.5 19.2c.9-3.1 3.4-5 6.5-5s5.6 1.9 6.5 5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function SocialDock() {
   const links = [
     {
@@ -52,14 +61,33 @@ export function SocialDock() {
     },
   ];
 
+  const linkClass =
+    "group relative grid size-9 sm:size-10 place-items-center rounded-full border border-ice/10 bg-abyss/80 text-mist transition-all duration-300";
+
   return (
     <motion.aside
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
       aria-label="Quick social links"
-      className="fixed right-3 bottom-5 z-[90] flex flex-col gap-2 sm:right-6 sm:bottom-8 max-w-[calc(100vw-1.5rem)]"
+      className="fixed right-3 bottom-5 z-[90] flex flex-col items-center gap-1.5 sm:right-6 sm:bottom-8 sm:gap-2 max-w-[calc(100vw-1.5rem)]"
     >
+      <div className="rounded-full glass glass-rim p-1.5 sm:p-2 backdrop-blur-xl shadow-2xl">
+        <a
+          href={site.portfolio}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Owner portfolio"
+          title="Owner portfolio"
+          className={`${linkClass} hover:text-aqua hover:border-aqua/40 hover:bg-aqua/10 hover:shadow-[0_0_20px_-3px_rgba(20,184,166,0.5)]`}
+        >
+          <PortfolioIcon className="size-4 sm:size-4.5 transition-transform duration-300 group-hover:scale-110" />
+          <span className="pointer-events-none absolute right-12 hidden rounded-lg border border-ice/10 bg-obsidian/90 px-2.5 py-1 text-xs font-medium text-ice opacity-0 shadow-lg backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100 sm:block whitespace-nowrap">
+            Owner portfolio
+          </span>
+        </a>
+      </div>
+
       <div className="flex flex-col gap-2 rounded-full glass glass-rim p-1.5 sm:p-2 backdrop-blur-xl shadow-2xl">
         {links.map((item) => {
           const Icon = item.icon;
@@ -71,11 +99,9 @@ export function SocialDock() {
               rel="noopener noreferrer"
               aria-label={item.name}
               title={item.name}
-              className={`group relative grid size-9 sm:size-10 place-items-center rounded-full border border-ice/10 bg-abyss/80 text-mist transition-all duration-300 ${item.color} ${item.glow}`}
+              className={`${linkClass} ${item.color} ${item.glow}`}
             >
               <Icon className="size-4 sm:size-4.5 transition-transform duration-300 group-hover:scale-110" />
-
-              {/* Tooltip on desktop */}
               <span className="pointer-events-none absolute right-12 hidden rounded-lg border border-ice/10 bg-obsidian/90 px-2.5 py-1 text-xs font-medium text-ice opacity-0 shadow-lg backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100 sm:block whitespace-nowrap">
                 {item.name}
               </span>

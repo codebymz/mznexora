@@ -29,11 +29,7 @@ export const contactSchema = z.object({
     .email({ message: "That address does not look right." })
     .max(160),
 
-  company: z
-    .string()
-    .trim()
-    .min(2, { message: "Company or project name, whichever exists." })
-    .max(120),
+  company: z.string().trim().max(120),
 
   service: z
     .string()

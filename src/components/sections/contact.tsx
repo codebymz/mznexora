@@ -280,7 +280,10 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="company">Company</Label>
+                    <Label htmlFor="company">
+                      Company
+                      <span className="text-mist/60">— optional</span>
+                    </Label>
                     <Input
                       id="company"
                       name="company"

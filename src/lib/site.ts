@@ -25,6 +25,8 @@ export const site = {
   whatsappHref: "https://wa.me/923269656457",
   github: "https://github.com/codebymz",
   linkedin: "https://linkedin.com/in/mznexora",
+  pinterest: "https://www.pinterest.com/mznexora",
+  portfolio: "https://mzainulabdin.vercel.app",
   address: {
     street: "Pakistan",
     city: "Pakistan",
@@ -65,6 +67,8 @@ export const socials = [
   { label: "Facebook", href: "https://facebook.com/mznexora" },
   { label: "Instagram", href: "https://instagram.com/mznexora" },
   { label: "X / Twitter", href: "https://x.com/mznexora" },
+  { label: "Pinterest", href: "https://www.pinterest.com/mznexora" },
+  { label: "Portfolio", href: "https://mzainulabdin.vercel.app" },
 ] as const;
 
 /** Headline proof points — real projects shipped. */

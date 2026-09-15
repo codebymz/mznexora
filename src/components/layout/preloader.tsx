@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
-import { Monogram } from "@/components/brand/wordmark";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useSmoothScroll } from "@/components/providers/smooth-scroll";
 import { site } from "@/lib/site";
@@ -123,8 +123,15 @@ export function Preloader({ onDone }: { onDone: () => void }) {
             className="relative flex flex-col items-center gap-8"
             exit={{ y: -26, opacity: 0, transition: { duration: 0.4 } }}
           >
-            <div className="relative grid size-20 place-items-center rounded-2xl glass glass-rim">
-              <Monogram className="size-10" />
+            <div className="relative grid size-20 place-items-center rounded-2xl glass glass-rim overflow-hidden p-1">
+              <Image
+                src={site.logo.path}
+                alt={site.logo.alt}
+                width={80}
+                height={80}
+                className="size-full object-cover rounded-xl"
+                priority
+              />
               <span
                 aria-hidden
                 className="absolute inset-0 rounded-2xl border border-aqua/25 animate-pulse-ring"
