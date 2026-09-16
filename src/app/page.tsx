@@ -1,3 +1,4 @@
+import { NexoraChatbot } from "@/components/chat/nexora-chatbot";
 import { About } from "@/components/sections/about";
 import { Advantage } from "@/components/sections/advantage";
 import { Contact } from "@/components/sections/contact";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Faq />
       <Contact />
       <SocialDock />
+      <NexoraChatbot />
     </>
   );
 }
