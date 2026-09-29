@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["Website Development", "UI/UX Design", "Personal Portfolio"],
     year: "2024",
     wash: "from-electric/25 via-electric/5 to-transparent",
-    link: "https://mzainulabdin.vercel.app",
+    link: "https://mzainulabdin.xyz",
     status: "Live",
   },
   {

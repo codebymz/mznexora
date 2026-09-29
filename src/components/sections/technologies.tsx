@@ -32,9 +32,9 @@ export function Technologies() {
 
       <div className="shell relative">
         <SectionHeading
-          eyebrow="The stack"
-          title="Chosen for the job, not for the logo wall."
-          lead="We are deliberately unromantic about tools. Every choice below has a reason we can defend in a review, and we will happily argue for the boring option when it wins."
+          eyebrow="Technology Stack"
+          title="Chosen for reliability, not for a logo wall."
+          lead="Every tool in my stack is battle-tested in real production environments. No inflated claims or tools I haven't worked with — only technologies I know inside and out."
         />
       </div>
 
@@ -76,9 +76,7 @@ export function Technologies() {
 
         <Reveal delay={0.1} className="mt-10">
           <p className="max-w-2xl text-sm leading-relaxed text-mist">
-            <span className="text-ice">Model-agnostic by design.</span> Providers
-            are configuration, not architecture — swapping the reasoning layer
-            should be a routing change and an eval run, never a rewrite.
+            <span className="text-ice">Production-tested & verified.</span> Every technology listed above is actively used across live products and client deliveries. Zero buzzword bloat — just reliable, high-performance tools that deliver results.
           </p>
         </Reveal>
       </div>

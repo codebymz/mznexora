@@ -86,13 +86,13 @@ export function Services() {
 
       <div className="shell relative">
         <SectionHeading
-          eyebrow="What we do"
+          eyebrow="What I Build"
           title={
             <>
-              Sixteen services, three practices, one accountable&nbsp;team.
+              Focused software engineering & intelligent&nbsp;systems.
             </>
           }
-          lead="Engagements usually start in one practice and pull in another once the first system is live. Nothing here is sold as a standalone package that ignores what happens next."
+          lead="From modern full-stack web applications and custom SaaS platforms to autonomous AI agents and conversion-focused growth channels. Engineered with clean code, direct accountability, and zero fluff."
           aside={
             <div className="flex items-baseline gap-3 rounded-pill glass px-5 py-3">
               <span
@@ -102,7 +102,7 @@ export function Services() {
                 {services.length}
               </span>
               <span className="max-w-[7rem] text-xs leading-tight text-mist">
-                capabilities under one contract
+                core services & capabilities
               </span>
             </div>
           }
@@ -152,12 +152,11 @@ export function Services() {
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl">
                 <h3 className="text-h3 text-ice sm:text-[1.375rem]">
-                  Not sure which of these you need?
+                  Have a project or system you need built?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist">
-                  Send us the process that is costing you the most time. We will
-                  tell you whether it is worth automating — and say so plainly
-                  when it is not.
+                  Share your product idea, existing codebase, or workflow challenge.
+                  I will review feasibility, recommend the cleanest tech stack, and provide an honest estimate.
                 </p>
               </div>
 
@@ -167,7 +166,7 @@ export function Services() {
                 className="shrink-0 w-full sm:w-auto"
                 onClick={() => scrollTo("#contact")}
               >
-                Book a diagnosis
+                Discuss Your Project
                 <ArrowUpRight />
               </Button>
             </div>

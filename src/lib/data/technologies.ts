@@ -1,58 +1,42 @@
 /**
- * Grouped by the role each tool plays in a build, so the section answers
- * "how would you build mine?" rather than "which logos do you know?".
+ * Realistic software engineering technology stack verified and actively used in production.
  */
 export const techGroups = [
   {
     id: "reasoning",
-    label: "Reasoning",
+    label: "AI & Models",
     items: [
       "Claude",
       "GPT",
       "Gemini",
       "Llama",
-      "Mistral",
-      "Whisper",
-      "LangGraph",
-      "Vercel AI SDK",
+      "OpenAI Agent SDK",
     ],
   },
   {
-    id: "retrieval",
-    label: "Retrieval & data",
+    id: "data",
+    label: "Databases & Storage",
     items: [
       "Postgres",
-      "pgvector",
-      "Pinecone",
-      "Weaviate",
-      "Redis",
-      "Snowflake",
-      "dbt",
-      "Kafka",
+      "Supabase",
+      "Neon",
     ],
   },
   {
     id: "orchestration",
-    label: "Orchestration",
+    label: "Automation & Workflows",
     items: [
       "n8n",
-      "Temporal",
-      "Airflow",
-      "Zapier",
-      "Make",
-      "Celery",
-      "Inngest",
-      "Trigger.dev",
     ],
   },
   {
     id: "interface",
-    label: "Interface",
+    label: "Frontend & Interface",
     items: [
       "Next.js",
       "React",
       "TypeScript",
-      "Tailwind",
+      "Tailwind CSS",
       "Framer Motion",
       "Three.js",
       "GSAP",
@@ -61,28 +45,18 @@ export const techGroups = [
   },
   {
     id: "platform",
-    label: "Platform",
+    label: "Cloud & Deployment",
     items: [
       "AWS",
       "Vercel",
-      "Cloudflare",
-      "Docker",
-      "Kubernetes",
-      "Terraform",
       "Supabase",
-      "Stripe",
+      "Neon",
     ],
   },
   {
     id: "growth",
-    label: "Growth",
+    label: "Growth & Marketing",
     items: [
-      "HubSpot",
-      "Salesforce",
-      "Klaviyo",
-      "Segment",
-      "GA4",
-      "Ahrefs",
       "Meta Ads",
       "Google Ads",
     ],

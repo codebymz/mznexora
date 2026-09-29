@@ -2,45 +2,33 @@ import type { LucideIcon } from "lucide-react";
 import {
   Bot,
   Boxes,
-  LayoutTemplate,
-  Mail,
+  Code2,
+  Cpu,
+  Database,
   MessageSquare,
-  Network,
-  PenLine,
-  Plug,
-  Radar,
   Search,
-  Share2,
   Sparkles,
   Target,
-  Users,
-  Video,
-  Workflow,
 } from "lucide-react";
 
-/**
- * Practices, not a flat menu. Sixteen services presented as peers reads as a
- * price list; grouped into three practices it reads as a company.
- */
 export const practices = [
   {
-    id: "intelligence",
-    name: "Applied Intelligence",
-    summary:
-      "Agents and automations that run your operations while your team sleeps.",
-    accent: "electric",
-  },
-  {
     id: "product",
-    name: "Product Engineering",
-    summary: "The interfaces, platforms and APIs the intelligence lives inside.",
+    name: "Software & Web Engineering",
+    summary: "Production-grade web applications, SaaS platforms, and backend systems built with modern engineering standards.",
     accent: "aqua",
   },
   {
-    id: "growth",
-    name: "Demand & Growth",
-    summary: "Pipeline systems that turn attention into qualified revenue.",
+    id: "intelligence",
+    name: "AI & Intelligent Systems",
+    summary: "Custom AI agents, LLM integrations, and smart assistants that automate real business operations.",
     accent: "electric",
+  },
+  {
+    id: "growth",
+    name: "Growth & Traffic",
+    summary: "Targeted advertising and technical SEO designed to bring real users and customers to your software.",
+    accent: "aqua",
   },
 ] as const;
 
@@ -49,167 +37,102 @@ export type PracticeId = (typeof practices)[number]["id"];
 export type Service = {
   id: string;
   title: string;
-  /** One line, plain language, what the client actually gets. */
   blurb: string;
   deliverables: [string, string, string];
   icon: LucideIcon;
   practice: PracticeId;
-  /** Bento weighting — feature services claim more of the grid. */
   featured?: boolean;
 };
 
 export const services: Service[] = [
-  // ---- Applied Intelligence ------------------------------------------------
+  // ---- Software & Web Engineering (Product Engineering) -------------------
   {
-    id: "ai-automation",
-    title: "AI Automation",
+    id: "fullstack-development",
+    title: "Full-Stack Web Development",
     blurb:
-      "We map the work your team repeats, then hand it to a system that never forgets a step.",
-    deliverables: ["Process audit", "Automation build", "Reliability SLAs"],
-    icon: Workflow,
-    practice: "intelligence",
+      "Modern, responsive web applications built with Next.js, React, and TypeScript. Engineered for fast load times, accessibility, and rock-solid code.",
+    deliverables: ["Next.js & TypeScript", "Component Architecture", "Performance & Core Vitals"],
+    icon: Code2,
+    practice: "product",
     featured: true,
   },
   {
-    id: "ai-agents",
-    title: "AI Agents",
+    id: "saas-engineering",
+    title: "Custom SaaS Platform Engineering",
     blurb:
-      "Autonomous workers with tools, memory and guardrails — scoped to one job and measured on it.",
-    deliverables: ["Tool + memory design", "Eval harness", "Human handoff rules"],
+      "End-to-end SaaS products with multi-tenant architecture, user authentication, role management, and database models that scale.",
+    deliverables: ["Auth & Role Management", "Database Schema & ORM", "Admin & User Dashboards"],
+    icon: Boxes,
+    practice: "product",
+    featured: true,
+  },
+  {
+    id: "cloud-systems",
+    title: "Database & Cloud Infrastructure",
+    blurb:
+      "Scalable database design and cloud deployments using PostgreSQL, Supabase, Neon, and AWS/Vercel pipelines.",
+    deliverables: ["Postgres & Supabase Setup", "Schema Migrations", "AWS & Vercel Deployment"],
+    icon: Database,
+    practice: "product",
+  },
+
+  // ---- AI & Intelligent Systems -------------------------------------------
+  {
+    id: "ai-agents",
+    title: "Custom AI Agents & LLM Systems",
+    blurb:
+      "Autonomous agents equipped with OpenAI Agent SDK, function calling, and domain guardrails scoped to handle specific tasks accurately.",
+    deliverables: ["Tool Calling & Logic", "Guardrails & Memory", "Prompt Architecture"],
     icon: Bot,
     practice: "intelligence",
     featured: true,
   },
   {
     id: "chatbots",
-    title: "Chatbots",
+    title: "Smart Chatbots & Knowledge Bases",
     blurb:
-      "Support and sales assistants trained on your documents, wired to your CRM, answering in your voice.",
-    deliverables: ["Knowledge pipeline", "Escalation logic", "Transcript analytics"],
+      "Domain-specific assistants integrated into your website, connected to your custom documentation or company knowledge.",
+    deliverables: ["Document Retrieval", "Contextual Answering", "Web Interface Integration"],
     icon: MessageSquare,
     practice: "intelligence",
   },
   {
-    id: "n8n-automation",
-    title: "n8n Automation",
+    id: "smart-automation",
+    title: "Intelligent Process Automation",
     blurb:
-      "Self-hosted workflow infrastructure you own outright — no per-task tax, no vendor ceiling.",
-    deliverables: ["Hosted instance", "Custom nodes", "Runbook + monitoring"],
-    icon: Network,
-    practice: "intelligence",
-  },
-  {
-    id: "api-integration",
-    title: "API Integration",
-    blurb:
-      "The unglamorous plumbing that makes twelve disconnected tools behave like one product.",
-    deliverables: ["Integration layer", "Retry + queue design", "Schema contracts"],
-    icon: Plug,
+      "Streamlining repetitive tasks and manual business steps with custom automated logic and AI-driven data processing.",
+    deliverables: ["Workflow Architecture", "Automated Triggers", "Failure Recovery Logic"],
+    icon: Cpu,
     practice: "intelligence",
   },
 
-  // ---- Product Engineering -------------------------------------------------
-  {
-    id: "website-development",
-    title: "Website Development",
-    blurb:
-      "Marketing sites engineered like products: fast, accessible, and editable without a developer.",
-    deliverables: ["Design system", "Headless CMS", "Core Web Vitals budget"],
-    icon: LayoutTemplate,
-    practice: "product",
-    featured: true,
-  },
-  {
-    id: "ai-website-development",
-    title: "AI Website Development",
-    blurb:
-      "Sites that adapt — personalised copy, on-page assistants, and search that understands intent.",
-    deliverables: ["Intent routing", "Embedded assistant", "Content generation"],
-    icon: Sparkles,
-    practice: "product",
-  },
-  {
-    id: "saas-development",
-    title: "SaaS Development",
-    blurb:
-      "Multi-tenant platforms from schema to billing, built to survive their own success.",
-    deliverables: ["Architecture", "Auth + billing", "Observability"],
-    icon: Boxes,
-    practice: "product",
-  },
-
-  // ---- Demand & Growth -----------------------------------------------------
-  {
-    id: "seo",
-    title: "SEO",
-    blurb:
-      "Technical depth and topical authority, built for both search engines and answer engines.",
-    deliverables: ["Technical fixes", "Topic clusters", "Entity coverage"],
-    icon: Search,
-    practice: "growth",
-    featured: true,
-  },
+  // ---- Growth & Traffic ---------------------------------------------------
   {
     id: "meta-ads",
-    title: "Meta Ads",
+    title: "Meta Ads (Facebook & Instagram)",
     blurb:
-      "Creative testing at volume with clean attribution, so spend follows evidence.",
-    deliverables: ["Creative sprints", "Signal setup", "Incrementality tests"],
+      "High-intent ad campaigns on Meta platforms configured to drive targeted traffic, leads, and paying users to your software.",
+    deliverables: ["Campaign Strategy", "Audience Targeting", "Conversion & Pixel Setup"],
     icon: Target,
     practice: "growth",
+    featured: true,
   },
   {
-    id: "social-media-marketing",
-    title: "Social Media Marketing",
+    id: "google-ads",
+    title: "Google Search & Display Ads",
     blurb:
-      "A publishing engine with a point of view — planned quarterly, shipped daily.",
-    deliverables: ["Editorial calendar", "Native creative", "Community ops"],
-    icon: Share2,
+      "Search-intent advertising that connects your product with active buyers searching for your exact software or service.",
+    deliverables: ["Keyword Research", "Ad Copy & Structuring", "Conversion Tracking"],
+    icon: Sparkles,
     practice: "growth",
   },
   {
-    id: "content-marketing",
-    title: "Content Marketing",
+    id: "technical-seo",
+    title: "Technical SEO & Discoverability",
     blurb:
-      "Research-led writing that earns links and closes deals, not word-count filler.",
-    deliverables: ["Narrative strategy", "Long-form assets", "Distribution"],
-    icon: PenLine,
-    practice: "growth",
-  },
-  {
-    id: "email-marketing",
-    title: "Email Marketing",
-    blurb:
-      "Lifecycle flows that behave like a good salesperson: timely, specific, easy to reply to.",
-    deliverables: ["Lifecycle map", "Deliverability", "Revenue reporting"],
-    icon: Mail,
-    practice: "growth",
-  },
-  {
-    id: "lead-generation",
-    title: "Lead Generation",
-    blurb:
-      "Outbound and inbound feeding one enriched pipeline your sales team actually trusts.",
-    deliverables: ["ICP research", "Enrichment stack", "Booked-meeting SLAs"],
-    icon: Radar,
-    practice: "growth",
-  },
-  {
-    id: "video-marketing",
-    title: "Video Marketing",
-    blurb:
-      "Short-form and brand film produced on a schedule, cut for every placement that matters.",
-    deliverables: ["Concepting", "Production", "Platform edits"],
-    icon: Video,
-    practice: "growth",
-  },
-  {
-    id: "influencer-marketing",
-    title: "Influencer Marketing",
-    blurb:
-      "Creator partnerships chosen on audience overlap and held to performance terms.",
-    deliverables: ["Creator vetting", "Deal structuring", "Usage rights"],
-    icon: Users,
+      "Clean metadata, OpenGraph cards, structured schema, and blazing-fast site architecture for top search indexing.",
+    deliverables: ["Structured Data (Schema)", "Metadata Optimization", "Core Web Vitals Boost"],
+    icon: Search,
     practice: "growth",
   },
 ];

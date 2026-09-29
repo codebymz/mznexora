@@ -32,8 +32,7 @@ export function Footer() {
             <Wordmark />
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-mist">
-              {site.tagline}. Applied intelligence, product engineering and
-              demand, run by the same senior team from diagnosis to handover.
+              {site.tagline}. High-performance full-stack web applications, custom SaaS platforms, and intelligent automation systems.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">

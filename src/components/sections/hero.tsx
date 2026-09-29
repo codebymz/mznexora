@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button";
 import { metrics, site } from "@/lib/site";
 
 const PROJECTS = [
-  "Personal Portfolio",
-  "Speed Lab",
-  "Zapr",
   "PaperGenAI",
-  "n8n Automations",
+  "Speed Lab",
+  "Zapr Converter",
+  "School LMS",
+  "Personal Portfolio",
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -60,38 +60,38 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Main Centered Hero Content (Matching reference screenshot) */}
+      {/* Main Centered Hero Content */}
       <div className="shell relative z-10 mx-auto flex flex-1 flex-col items-center justify-center text-center max-w-4xl pt-6 sm:pt-10">
         <motion.div {...cue(0.05)} className="flex justify-center">
-          <Badge tone="live">Autonomous AI & Next-Gen Systems</Badge>
+          <Badge tone="live">Lead Software Engineer & Full-Stack Builder</Badge>
         </motion.div>
 
-        {/* Dual-tone Headline matching reference image */}
+        {/* Realistic developer headline */}
         <h1 className="mt-6 sm:mt-8 text-display text-ice tracking-tight">
           <motion.span
-            className="block bg-gradient-to-r from-[#d946ef] via-[#38bdf8] to-[#06b6d4] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]"
+            className="block bg-gradient-to-r from-[#60a5fa] via-[#38bdf8] to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]"
             {...cue(0.18)}
           >
-            Building Autonomous AI.
+            Engineering Scalable Web Apps.
           </motion.span>
           <motion.span
             className="block text-white mt-1.5 sm:mt-3"
             {...cue(0.32)}
           >
-            Scalable Systems.
+            Building Production Software.
           </motion.span>
         </h1>
 
-        {/* Centered Descriptive Lead */}
+        {/* Grounded Descriptive Lead */}
         <motion.p
           {...cue(0.5)}
           className="mt-6 sm:mt-8 max-w-2xl text-lead text-dim/90 font-normal leading-relaxed"
         >
-          Our technology powers next-generation AI agents, autonomous n8n workflows,
-          and high-velocity web engines designed to eliminate friction and scale operations effortlessly.
+          Hi, I am Muhammad Zain. I architect, develop, and ship high-performance full-stack web applications,
+          custom SaaS platforms, and intelligent automation systems that solve real business problems.
         </motion.p>
 
-        {/* Centered Dual Action Buttons (matching the reference image's pill styles) */}
+        {/* Action Buttons */}
         <motion.div
           {...cue(0.68)}
           className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4"
@@ -103,7 +103,7 @@ export function Hero() {
               onClick={() => scrollTo("#contact")}
               className="group/cta px-8 py-3.5 rounded-pill bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-medium shadow-[0_0_25px_rgba(37,99,235,0.45)] hover:shadow-[0_0_35px_rgba(37,99,235,0.65)] hover:scale-[1.02] transition-all duration-300"
             >
-              Get started
+              Start a Project
               <ArrowUpRight className="transition-transform duration-400 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
             </Button>
           </Magnetic>
@@ -113,10 +113,10 @@ export function Hero() {
               variant="glass"
               size="lg"
               onClick={() => scrollTo("#work")}
-              className="px-8 py-3.5 rounded-pill border border-purple-500/30 bg-purple-950/20 text-ice/90 backdrop-blur-xl shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:border-cyan-400/50 hover:bg-cyan-950/30 hover:text-white hover:shadow-[0_0_25px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-all duration-300"
+              className="px-8 py-3.5 rounded-pill border border-cyan-500/30 bg-slate-900/60 text-ice/90 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/50 hover:bg-cyan-950/40 hover:text-white hover:shadow-[0_0_25px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-all duration-300"
             >
               <Play className="size-3.5 fill-current text-cyan-400" />
-              Ecosystems
+              View Selected Work
             </Button>
           </Magnetic>
         </motion.div>

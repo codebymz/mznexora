@@ -44,6 +44,12 @@ export default function PrivacyPage() {
       content:
         "You have the right to request access to your personal data, request correction or complete erasure of your information from our systems, and opt out of direct communication at any time by contacting us directly.",
     },
+    {
+      icon: Eye,
+      title: "6. Cookies & Tracking Technologies",
+      content:
+        "We operate with a privacy-first mindset. This website does not deploy invasive cross-site advertising cookies or tracking scripts. Local browser storage is strictly utilized for core UI preferences (such as chatbot state and visual preferences) and is never shared with third-party advertisers.",
+    },
   ];
 
   return (

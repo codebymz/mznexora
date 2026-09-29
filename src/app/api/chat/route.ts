@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { SYSTEM_PROMPT } from "@/lib/ai/knowledge-base";
 import { generateBotResponse } from "@/lib/chatbot-engine";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -176,7 +177,7 @@ function extractActionLinksAndSuggestions(query: string, replyText: string) {
   } else if (q.includes("founder") || q.includes("zain") || q.includes("owner")) {
     actionLink = {
       label: "View Zain's Portfolio",
-      href: "https://mzainulabdin.vercel.app",
+      href: "https://mzainulabdin.xyz",
       external: true,
     };
     suggestions = [
@@ -191,6 +192,19 @@ function extractActionLinksAndSuggestions(query: string, replyText: string) {
 
 export async function POST(request: Request) {
   try {
+    const ip = getClientIp(request);
+    const rateCheck = checkRateLimit(`chat_${ip}`, 20, 60_000);
+
+    if (!rateCheck.success) {
+      return NextResponse.json(
+        {
+          error: "Rate limit exceeded. Please wait a moment before sending more messages.",
+          text: "You are sending messages too quickly. Please pause for a few seconds before trying again.",
+        },
+        { status: 429 }
+      );
+    }
+
     const body: ChatPayload = await request.json();
     const message = body.message?.trim();
 

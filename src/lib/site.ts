@@ -6,13 +6,13 @@
 export const site = {
   name: "MZ Nexora",
   legalName: "MZ Nexora",
-  tagline: "AI Studio, Autonomous Agents & n8n Automations",
+  tagline: "Software Engineer & Builder — Full-Stack Web & AI Systems",
   description:
-    "MZ Nexora is a premier AI & automation studio founded by Muhammad Zain. We build autonomous AI agents, custom n8n workflows, web tools, and Next.js applications that automate business operations and drive exponential growth.",
+    "MZ Nexora is the software engineering studio of Muhammad Zain. Crafting high-performance full-stack web applications, custom SaaS platforms, and intelligent automation systems.",
   logo: {
     path: "/assets/logos/logo.jpg",
     icon: "/assets/logos/logo.jpg",
-    alt: "MZ Nexora AI Studio Logo",
+    alt: "MZ Nexora Software Engineering Logo",
   },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mznexora.vercel.app",
   locale: "en_US",
@@ -26,7 +26,7 @@ export const site = {
   github: "https://github.com/codebymz",
   linkedin: "https://linkedin.com/in/mznexora",
   pinterest: "https://www.pinterest.com/mznexora",
-  portfolio: "https://mzainulabdin.vercel.app",
+  portfolio: "https://mzainulabdin.xyz",
   address: {
     street: "Pakistan",
     city: "Pakistan",
@@ -68,7 +68,7 @@ export const socials = [
   { label: "Instagram", href: "https://instagram.com/mznexora" },
   { label: "X / Twitter", href: "https://x.com/mznexora" },
   { label: "Pinterest", href: "https://www.pinterest.com/mznexora" },
-  { label: "Portfolio", href: "https://mzainulabdin.vercel.app" },
+  { label: "Portfolio", href: "https://mzainulabdin.xyz" },
 ] as const;
 
 /** Headline proof points — real projects shipped. */

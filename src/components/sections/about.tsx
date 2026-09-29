@@ -32,12 +32,12 @@ export function About() {
           eyebrow="Who I am"
           title={
             <>
-              A solo builder turning ideas into{" "}
-              <span className="text-brand-gradient">real AI products</span> —
+              A dedicated software engineer turning ideas into{" "}
+              <span className="text-brand-gradient">production software</span> —
               one system at a time.
             </>
           }
-          lead="MZ Nexora is me — one person, building real things. No big team, no corporate jargon. Just focused work: automations, AI agents, web tools, and workflows that actually run."
+          lead="MZ Nexora is my independent engineering studio. No middlemen, no bloated agency overhead. Just focused, high-standard software development: full-stack web applications, custom SaaS platforms, and intelligent automations that actually run."
         />
 
         <div className="mt-16 grid gap-12 lg:mt-20 lg:grid-cols-12 lg:gap-16">

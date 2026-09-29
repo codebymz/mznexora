@@ -1,9 +1,20 @@
 import { NextResponse } from "next/server";
 
 import { contactSchema, firstErrors } from "@/lib/schema/contact";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
   try {
+    const ip = getClientIp(request);
+    const rateCheck = checkRateLimit(`contact_${ip}`, 5, 60_000);
+
+    if (!rateCheck.success) {
+      return NextResponse.json(
+        { message: "Too many submission attempts. Please wait a minute and try again." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
 
     const parsed = contactSchema.safeParse(body);

@@ -47,6 +47,6 @@ export const faqs: FaqItem[] = [
     id: "fit",
     question: "What kinds of projects do you take on?",
     answer:
-      "AI automations, n8n workflows, web tools, SaaS apps, and API integrations. I am most useful when you have a specific problem to solve or a product idea to build. I am not the right fit for very large team-based enterprise contracts — but for focused, high-quality solo work, that is exactly what I do.",
+      "Full-stack Next.js web applications, custom SaaS platforms, smart AI agents, interactive web tools, and automated workflows. I am most useful when you have a specific product idea to build or complex manual processes to streamline with clean code.",
   },
 ];

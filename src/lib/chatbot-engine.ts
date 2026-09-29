@@ -183,7 +183,7 @@ Key Facts about the Founder:
 • **Role:** Solo builder, Full-Stack & AI Automation Engineer based in Pakistan.
 • **Philosophy:** *"I build things I would use myself. That is the only standard I work to."*
 • **Experience:** 100% solo-built & owned production systems, autonomous n8n workflows, AI agents, and web applications.
-• **Personal Portfolio:** [mzainulabdin.vercel.app](${site.portfolio})
+• **Personal Portfolio:** [mzainulabdin.xyz](${site.portfolio})
 • **Direct Contact:** [WhatsApp](${site.whatsapp}) or [Email](mailto:${site.email})`,
       suggestions: [
         "What projects has Zain built?",
@@ -245,27 +245,26 @@ We build production-ready systems from start to finish with direct engineering c
     query.includes("applied intelligence")
   ) {
     return {
-      text: `MZ Nexora operates across **three main engineering practices**:
+      text: `MZ Nexora operates across **three focused engineering practices**:
 
-1. 🧠 **Applied Intelligence:**
-   • Autonomous AI Agents & Multi-Agent systems
-   • Custom n8n Workflow Automation
-   • Intelligent Chatbots & Document Assistants
-   • Process Audits & Reliability SLAs
+1. 💻 **Software & Web Engineering:**
+   • Full-Stack Web Applications (Next.js, React & TypeScript)
+   • Custom SaaS Platform Engineering (Auth, multi-tenancy & dashboards)
+   • Database & Cloud Infrastructure (PostgreSQL, Supabase, Neon, AWS, Vercel)
 
-2. ⚡ **Product Engineering:**
-   • Modern Next.js 15 & React Web Platforms
-   • Interactive 3D interfaces (Three.js / WebGL)
-   • Secure REST / GraphQL API Integrations
-   • Scalable PostgreSQL & Vector Database Architecture
+2. 🤖 **AI & Intelligent Systems:**
+   • Custom AI Agents & LLM Systems (OpenAI Agent SDK, guardrails, memory)
+   • Smart Chatbots & Document Knowledge Bases
+   • Intelligent Process & Business Automation
 
-3. 📈 **Demand & Growth:**
-   • Automated Outbound & Inbound Lead Pipelines
-   • SEO, Meta Ads & Social Media Marketing`,
+3. 📈 **Growth & Traffic:**
+   • Meta Ads (High-intent Facebook & Instagram campaigns)
+   • Google Search & Display Ads
+   • Technical SEO & Web Performance Optimization`,
       suggestions: [
-        "Tell me about n8n automation",
         "Tell me about AI Agents",
         "View past projects",
+        "Discuss a project with Zain",
         "Get a project quote",
       ],
       actionLink: {
@@ -422,7 +421,7 @@ We build and deploy robust, self-hosted n8n instances and enterprise pipelines:
 • 💬 **WhatsApp:** [${site.phone}](${site.whatsapp})
 • 📧 **Email:** [${site.email}](mailto:${site.email})
 • 📍 **Location:** Pakistan (Serving international clients)
-• 🌐 **Founder Portfolio:** [mzainulabdin.vercel.app](${site.portfolio})
+• 🌐 **Founder Portfolio:** [mzainulabdin.xyz](${site.portfolio})
 • 🐙 **GitHub:** [github.com/codebymz](${site.github})
 • 💼 **LinkedIn:** [linkedin.com/in/mznexora](${site.linkedin})
 

@@ -74,6 +74,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
               href={study.link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`View live project: ${study.title}`}
               className="group/link inline-flex items-center gap-2 transition-colors hover:text-aqua"
             >
               <span>{study.title}</span>
