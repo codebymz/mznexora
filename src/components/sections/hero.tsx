@@ -21,6 +21,51 @@ const PROJECTS = [
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+const DROP_SPRING = { type: "spring", stiffness: 260, damping: 18 } as const;
+
+// Character-by-character drop-from-top variants
+const charContainer = (delay: number) => ({
+  initial: {},
+  animate: { transition: { staggerChildren: 0.035, delayChildren: delay } },
+});
+
+const charItem = {
+  initial: { opacity: 0, y: -50 },
+  animate: { opacity: 1, y: 0, transition: DROP_SPRING },
+};
+
+// Animated character splitter — each letter falls from above
+function AnimatedChars({
+  text,
+  className,
+  delay,
+}: {
+  text: string;
+  className?: string;
+  delay: number;
+}) {
+  const chars = text.split("");
+  return (
+    <motion.span
+      className={`inline ${className ?? ""}`}
+      variants={charContainer(delay)}
+      initial="initial"
+      animate="animate"
+      aria-label={text}
+    >
+      {chars.map((char, i) => (
+        <motion.span
+          key={i}
+          className={char === " " ? "inline-block w-[0.3em]" : "inline-block"}
+          variants={charItem}
+          aria-hidden
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
 
 export function Hero() {
   const introDone = useIntroDone();
@@ -63,23 +108,29 @@ export function Hero() {
       {/* Main Centered Hero Content */}
       <div className="shell relative z-10 mx-auto flex flex-1 flex-col items-center justify-center text-center max-w-4xl pt-6 sm:pt-10">
         <motion.div {...cue(0.05)} className="flex justify-center">
-          <Badge tone="live">Lead Software Engineer & Full-Stack Builder</Badge>
+          {/* Issue 4 fix: override text-transform so this 44-char label stays in
+              sentence case — uppercase is reserved for short 2-3 word labels. */}
+          <Badge tone="live" className="normal-case tracking-normal">
+            Lead Software Engineer &amp; Full-Stack Builder
+          </Badge>
         </motion.div>
 
         {/* Realistic developer headline */}
-        <h1 className="mt-6 sm:mt-8 text-display text-ice tracking-tight">
-          <motion.span
-            className="block bg-gradient-to-r from-[#60a5fa] via-[#38bdf8] to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]"
-            {...cue(0.18)}
-          >
-            Engineering Scalable Web Apps.
-          </motion.span>
-          <motion.span
-            className="block text-white mt-1.5 sm:mt-3"
-            {...cue(0.32)}
-          >
-            Building Production Software.
-          </motion.span>
+        <h1 className="mt-6 sm:mt-8 text-ice tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', lineHeight: 1.1 }}>
+          {/* Line 1 & 2 — Blue gradient */}
+          <span className="block bg-gradient-to-r from-[#60a5fa] via-[#38bdf8] to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]">
+            {introDone && <AnimatedChars text="Engineering Scalable" delay={0.18} />}
+          </span>
+          <span className="block bg-gradient-to-r from-[#60a5fa] via-[#38bdf8] to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]">
+            {introDone && <AnimatedChars text="Web Apps." delay={0.35} />}
+          </span>
+          {/* Line 3 & 4 — White */}
+          <span className="block text-white mt-2">
+            {introDone && <AnimatedChars text="Building Production" delay={0.52} />}
+          </span>
+          <span className="block text-white">
+            {introDone && <AnimatedChars text="Software." delay={0.69} />}
+          </span>
         </h1>
 
         {/* Grounded Descriptive Lead */}
@@ -96,12 +147,14 @@ export function Hero() {
           {...cue(0.68)}
           className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4"
         >
+          {/* Issue 3 fix: use canonical Button variants instead of one-off
+              inline overrides that introduced extra button styles. */}
           <Magnetic cap={8}>
             <Button
-              variant="primary"
+              variant="brand"
               size="lg"
               onClick={() => scrollTo("#contact")}
-              className="group/cta px-8 py-3.5 rounded-pill bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-medium shadow-[0_0_25px_rgba(37,99,235,0.45)] hover:shadow-[0_0_35px_rgba(37,99,235,0.65)] hover:scale-[1.02] transition-all duration-300"
+              className="group/cta hover:scale-[1.02]"
             >
               Start a Project
               <ArrowUpRight className="transition-transform duration-400 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
@@ -113,9 +166,9 @@ export function Hero() {
               variant="glass"
               size="lg"
               onClick={() => scrollTo("#work")}
-              className="px-8 py-3.5 rounded-pill border border-cyan-500/30 bg-slate-900/60 text-ice/90 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/50 hover:bg-cyan-950/40 hover:text-white hover:shadow-[0_0_25px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-all duration-300"
+              className="hover:scale-[1.02]"
             >
-              <Play className="size-3.5 fill-current text-cyan-400" />
+              <Play className="size-3.5 fill-current text-aqua" />
               View Selected Work
             </Button>
           </Magnetic>

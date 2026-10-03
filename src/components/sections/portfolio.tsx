@@ -146,6 +146,7 @@ function CaseCard({ study, featured }: { study: CaseStudy; featured: boolean }) 
               href={study.link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Visit live project: ${study.title}`}
               className="inline-flex shrink-0 items-center gap-1.5 rounded-pill border border-aqua/30 bg-aqua/10 px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-aqua transition-all hover:border-aqua/60 hover:bg-aqua/20 shadow-xs"
             >
               Visit Project

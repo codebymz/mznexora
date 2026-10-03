@@ -96,6 +96,6 @@ ${JSON.stringify(STUDIO_KNOWLEDGE, null, 2)}
 
 ### RESPONSE FORMATTING RULES:
 - Keep answers concise, clear, and well-structured using markdown bullets and bold headers where appropriate.
-- When referencing project links or contact methods, format them cleanly (e.g. [WhatsApp](https://wa.me/923269656457), [PaperGenAI](https://paper-genai.vercel.app)).
+- When referencing project links or contact methods, format them cleanly (e.g. [WhatsApp](https://wa.me/923269656457), [PaperGenAI](https://paper-genai.vercel.app), [Portfolio](https://mzainulabdin.xyz)).
 - Respond in the language the user speaks (English, Urdu, or Roman Urdu).
 `;

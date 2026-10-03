@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { ArrowUp, Mail, Phone } from "lucide-react";
 
 import { Wordmark } from "@/components/brand/wordmark";
@@ -15,8 +16,18 @@ const legal = [
 ] as const;
 
 export function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
   const { scrollTo } = useSmoothScroll();
   const year = new Date().getFullYear();
+
+  const navigateTo = (href: string) => {
+    if (pathname !== "/") {
+      router.push("/" + (href.startsWith("#") ? href : ""));
+      return;
+    }
+    scrollTo(href);
+  };
 
   return (
     <footer className="relative overflow-hidden border-t border-ice/[0.07]">
@@ -64,8 +75,8 @@ export function Footer() {
                   <li key={practice.id}>
                     <button
                       type="button"
-                      onClick={() => scrollTo("#services")}
-                      className="text-left text-sm text-mist transition-colors duration-300 hover:text-ice"
+                      onClick={() => navigateTo("#services")}
+                      className="text-left text-sm text-mist transition-colors duration-300 hover:text-ice cursor-pointer"
                     >
                       {practice.name}
                     </button>
@@ -81,8 +92,8 @@ export function Footer() {
                   <li key={link.id}>
                     <button
                       type="button"
-                      onClick={() => scrollTo(link.href)}
-                      className="text-left text-sm text-mist transition-colors duration-300 hover:text-ice"
+                      onClick={() => navigateTo(link.href)}
+                      className="text-left text-sm text-mist transition-colors duration-300 hover:text-ice cursor-pointer"
                     >
                       {link.label}
                     </button>
@@ -137,8 +148,8 @@ export function Footer() {
 
             <button
               type="button"
-              onClick={() => scrollTo("#hero")}
-              className="group inline-flex items-center gap-2 rounded-pill glass glass-rim px-3.5 py-2 font-mono text-xs uppercase tracking-wider text-mist transition-colors duration-400 hover:text-ice"
+              onClick={() => navigateTo("#hero")}
+              className="group inline-flex items-center gap-2 rounded-pill glass glass-rim px-3.5 py-2 font-mono text-xs uppercase tracking-wider text-mist transition-colors duration-400 hover:text-ice cursor-pointer"
             >
               Top
               <ArrowUp className="size-3 transition-transform duration-400 group-hover:-translate-y-0.5" />

@@ -64,11 +64,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/assets/logos/logo.svg", type: "image/svg+xml" },
       { url: "/assets/logos/logo.png", type: "image/png" },
     ],
-    shortcut: "/assets/logos/logo.png",
-    apple: "/assets/logos/logo.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,
@@ -90,7 +91,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${site.url}/assets/logos/logo.jpg`,
+        url: `${site.url}/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${site.name} — Software Engineer & Builder`,
@@ -101,7 +102,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — Full-Stack Software Engineer & AI Systems`,
     description: site.description,
-    images: [`${site.url}/assets/logos/logo.jpg`],
+    images: [`${site.url}/og-image.png`],
     creator: "@mznexora",
   },
 };

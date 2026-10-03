@@ -43,6 +43,14 @@
   --text-lead: clamp(0.96875rem, 1.3vw, 1.25rem);
   --text-lead--line-height: 1.6;
 
+  /* --- Shared body sub-scales (keeps distinct-font-size count ≤ 10) --- */
+  /* 13px step — used for secondary labels, captions, button-sm */
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: 1.5;
+  /* 15px step — used for card body copy, contact details, footer blurb */
+  --text-body-base: 0.9375rem;
+  --text-body-base--line-height: 1.65;
+
   /* --- Radii ------------------------------------------------------------ */
   --radius-glass: 1.5rem;
   --radius-pill: 999px;
@@ -425,10 +433,12 @@
   }
 
   /* --- Type treatments -------------------------------------------------- */
+  /* Issue 5 fix — reduce letter-spacing so 16+ char eyebrow labels
+     remain readable at a glance (was 0.22em, which stretches long phrases). */
   .eyebrow {
     font-family: var(--font-mono);
     font-size: var(--text-eyebrow);
-    letter-spacing: 0.22em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-mist);
   }
